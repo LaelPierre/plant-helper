@@ -21,8 +21,8 @@ plant = Plant.new(
   description: Faker::ChuckNorris.fact
 )
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
 user_plant = UserPlant.new(
@@ -36,8 +36,8 @@ task = Task.new(
   description: Faker::ChuckNorris.fact
 )
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 task.save!
 
 user_task = UserTask.new(
