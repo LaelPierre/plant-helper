@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_170753) do
+ActiveRecord::Schema.define(version: 2022_03_01_184908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,25 @@ ActiveRecord::Schema.define(version: 2022_03_01_170753) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_plants", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "plant_age"
+    t.integer "plant_health"
+    t.bigint "user_id", null: false
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_user_plants_on_plant_id"
+    t.index ["user_id"], name: "index_user_plants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,4 +54,6 @@ ActiveRecord::Schema.define(version: 2022_03_01_170753) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_plants", "plants"
+  add_foreign_key "user_plants", "users"
 end
