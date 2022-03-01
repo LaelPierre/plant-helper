@@ -27,7 +27,7 @@ plant.save!
 
 user_plant = UserPlant.new(
   user_id: User.first.id,
-  plant_id: Plant.first.id
+  plant_id: plant.id
 )
 user_plant.save!
 
@@ -36,122 +36,172 @@ task = Task.new(
   description: Faker::ChuckNorris.fact
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
 task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 task.save!
 
 user_task = UserTask.new(
-  user_plant_id: UserPlant.first.id,
-  task_id: Task.first.id
+  user_plant_id: user_plant.id,
+  task_id: task.id
 )
 user_task.save!
 
-# # plant2
-# plant = Plant.new(
-#   plant_id: User.first.id,
-#   species: Faker::Beer.unique.name,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+# plant2
+plant = Plant.new(
+  species: Faker::Beer.unique.name,
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# plant.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/91_gUFxQ6sL._AC_SL1500__nw79ic.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+plant.save!
 
-# task = Task.new(
-#   task_id: User.first.id,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+user_plant = UserPlant.new(
+  user_id: User.first.id,
+  plant_id: plant.id
+)
+user_plant.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+task = Task.new(
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# # plant3
-# plant = Plant.new(
-#   plant_id: User.first.id,
-#   species: Faker::Beer.unique.name,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/91_gUFxQ6sL._AC_SL1500__nw79ic.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# plant.save!
+user_task = UserTask.new(
+  user_plant_id: user_plant.id,
+  task_id: task.id
+)
+user_task.save!
 
-# task = Task.new(
-#   task_id: User.first.id,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+# plant3
+plant = Plant.new(
+  species: Faker::Beer.unique.name,
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81rMzcWGEDL._AC_SL1500__mld70o.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+plant.save!
 
-# # plant4
-# plant = Plant.new(
-#   plant_id: User.first.id,
-#   species: Faker::Beer.unique.name,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+user_plant = UserPlant.new(
+  user_id: User.first.id,
+  plant_id: plant.id
+)
+user_plant.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81d-49hV6vL._AC_SL1500__cz5iyr.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# plant.save!
+task = Task.new(
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# task = Task.new(
-#   task_id: User.first.id,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+user_task = UserTask.new(
+  user_plant_id: user_plant.id,
+  task_id: task.id
+)
+user_task.save!
 
-# # plant5
-# plant = Plant.new(
-#   plant_id: User.first.id,
-#   species: Faker::Beer.unique.name,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+# plant4
+plant = Plant.new(
+  species: Faker::Beer.unique.name,
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81_3WonVCrL._AC_SL1500__qz6zfa.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# plant.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81d-49hV6vL._AC_SL1500__cz5iyr.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+plant.save!
 
-# task = Task.new(
-#   task_id: User.first.id,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+user_plant = UserPlant.new(
+  user_id: User.first.id,
+  plant_id: plant.id
+)
+user_plant.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+task = Task.new(
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# # plant6
-# plant = Plant.new(
-#   plant_id: User.first.id,
-#   species: Faker::Beer.unique.name,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81d-49hV6vL._AC_SL1500__cz5iyr.jpg')
-# plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# plant.save!
+user_task = UserTask.new(
+  user_plant_id: user_plant.id,
+  task_id: task.id
+)
+user_task.save!
 
-# task = Task.new(
-#   task_id: User.first.id,
-#   name: Faker::Beer.unique.name,
-#   description: Faker::ChuckNorris.fact
-# )
+# plant5
+plant = Plant.new(
+  species: Faker::Beer.unique.name,
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
-# task.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/61VE4mjT7gL._AC_SL1005__pyvyte.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+plant.save!
+
+user_plant = UserPlant.new(
+  user_id: User.first.id,
+  plant_id: plant.id
+)
+user_plant.save!
+
+task = Task.new(
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
+
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
+
+user_task = UserTask.new(
+  user_plant_id: user_plant.id,
+  task_id: task.id
+)
+user_task.save!
+
+# plant6
+plant = Plant.new(
+  species: Faker::Beer.unique.name,
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
+
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81_3WonVCrL._AC_SL1500__qz6zfa.jpg')
+plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+plant.save!
+
+user_plant = UserPlant.new(
+  user_id: User.first.id,
+  plant_id: plant.id
+)
+user_plant.save!
+
+task = Task.new(
+  name: Faker::Beer.unique.name,
+  description: Faker::ChuckNorris.fact
+)
+
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
+
+user_task = UserTask.new(
+  user_plant_id: user_plant.id,
+  task_id: task.id
+)
+user_task.save!
