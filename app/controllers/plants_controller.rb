@@ -11,4 +11,8 @@ class PlantsController < ApplicationController
       format.text { render partial: 'plants/list', locals: { plants: @plants }, formats: [:html] }
     end
   end
+
+  def show
+    @plant = Plant.find(params[:id])
+  end
 end
