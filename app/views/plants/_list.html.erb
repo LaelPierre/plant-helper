@@ -1,11 +1,12 @@
-<div class="card-plant container">
-  <% @plants.each do |plant| %>
-    <%= cl_image_tag plant.photos.first.key, width: 125, height: 125, crop: :fill, class: "image-border" %>
-    <div class="card-plant-infos">
-      <div>
-        <h2><%= plant.species %></h2>
-        <h3><%= plant.name %></h3>
+<% @plants.each do |plant| %>
+  <li>
+    <%= link_to plant_path(plant) do %>
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag plant.photos.first.key, height: 200, width: 200, crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= plant.name %></h5>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </li>
+<% end %>

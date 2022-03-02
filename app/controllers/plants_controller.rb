@@ -3,7 +3,7 @@ class PlantsController < ApplicationController
     if params[:query].present?
       @plants = Plant.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @plants = []
+      @plants = Plant.all
     end
 
     respond_to do |format|
