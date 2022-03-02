@@ -1,0 +1,23 @@
+
+<form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group" data-controller="plant-card">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+
+<%# Display all the plants from the DB %>
+<div class="card-plant">
+  <% @plants.each do |plant| %>
+    <%= cl_image_tag plant.photos.first.key, width: 125, height: 125, crop: :fill, class: "image-border" %>
+    <div class="card-plant-infos">
+      <div>
+        <h2><%= plant.species %></h2>
+        <h3><%= plant.name %></h3>
+        <p><%= plant.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
