@@ -1,18 +1,38 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
+  Add a plant!
 </button>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Add your plant</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
+        <div class="container">
+          <div class="row justify-content-center">
+            <% @plants.each do |plant| %>
+              <div class="card" style="width: 18rem;">
+                <%= cl_image_tag plant.photos.first.key, height: 200, width: 200, crop: :fill %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= plant.name %></h5>
+                  <p class="card-text"><%= plant.description %></p>
+                  <a href="#" class="btn btn-primary">Add</a>
+                </div>
+                <div class="form">
+                  <%= simple_form_for @user_plant do |f| %>
+                    <%= f.input :plant_age %>
+                    <%= f.input :plant_health %>
+                    <%= f.submit %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
