@@ -1,3 +1,13 @@
-<h1>Show plant</h1>
-
-<%= @plant.name %>
+<div class="container">
+  <h1><%= @plant.name %></h1>
+  <%= cl_image_tag @plant.photos.first.key, height: 200, width: 200, crop: :fill %>
+  <div>
+    <p><%= @plant.description %></p>
+  </div>
+  <%= simple_form_for @user_plant do |f| %>
+        <%  f.input_field :plant_id, as: :hidden, value: 1 %>
+        <%= f.input :plant_age, collection: UserPlant.plant_ages.map { |pa| pa } %>
+        <%= f.input :plant_health, collection: UserPlant.plant_healths.map { |ph| ph } %>
+        <%= f.submit %>
+  <% end %>
+</div>
