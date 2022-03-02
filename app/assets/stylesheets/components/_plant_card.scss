@@ -1,0 +1,19 @@
+.plants-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    flex: 0 0 33.333333%;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      .card:hover {
+        border: 1px solid black;
+      }
+    }
+  }
+}
