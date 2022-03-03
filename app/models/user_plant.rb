@@ -3,6 +3,9 @@ class UserPlant < ApplicationRecord
   belongs_to :plant
   has_many :user_tasks, dependent: :destroy
 
+  validates :plant_age, presence: true
+  validates :plant_health, presence: true
+
   enum plant_age: {
     young: 0,
     advanced: 1,

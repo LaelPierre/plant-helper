@@ -6,6 +6,18 @@ class UserPlantsController < ApplicationController
   end
 
   def create
-    raise
+    @user_plant = UserPlant.new(user_plant_params)
+    @user_plant.user = current_user
+    if @user_plant.save
+      redirect_to my_plants_path
+    else
+      render 'plants/show'
+    end
+  end
+
+  private
+
+  def user_plant_params
+    params.require(:user_plant).permit(:plant_age, :plant_health, :plant_id, :nickname)
   end
 end
