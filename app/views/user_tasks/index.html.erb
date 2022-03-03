@@ -1,0 +1,6 @@
+<h1>Dashboard</h1>
+
+<% @user_tasks.each do |user_task| %>
+  <%= user_task.task.name %>
+  <%= user_task.task.description %>
+<% end %>
