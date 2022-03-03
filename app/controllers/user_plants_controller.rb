@@ -10,7 +10,7 @@ class UserPlantsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @user_plant.plant = @plant
     @user_plant.user = current_user
-    if @user_plant.save!
+    if @user_plant.save
       redirect_to my_plants_path
     else
       render 'plants/show'

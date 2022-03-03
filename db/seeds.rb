@@ -17,12 +17,12 @@ User.create!(email: "test1@test.com", password: "123456")
 
 # plant1
 plant = Plant.new(
-  species: "Sansevieria trifasciata",
-  name: "Snake Plant",
-  description: "Dracaena trifasciata is the most common type of sansevierias in indoor floriculture."
+  species: "Bonsaï",
+  name: "Bonsaï",
+  description: "Bonsai are trees and plants grown in containers in such a way so that they look their most beautiful"
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/81rMzcWGEDL._AC_SL1500__1_etxyic.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646334648/plant%20sample/bonsai_liejqj.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -49,12 +49,12 @@ task.save!
 
 # plant2
 plant = Plant.new(
-  species: "Epipremnum aureum",
-  name: "Golden Pothos",
-  description: "Epipremnum is an evergreen perennial herbaceous liana."
+  species: "Indoor Bamboo",
+  name: "Bamboo",
+  description: "Bamboos are distributed in tropical and subtropical to mild temperate regions"
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163162/plant%20sample/91_gUFxQ6sL._AC_SL1500__nw79ic.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646334612/plant%20sample/bamboo_rli2ny.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -81,12 +81,12 @@ task.save!
 
 # plant3
 plant = Plant.new(
-  species: "Aloe vera",
-  name: "Aloe Vera",
-  description: "The succulent herbaceous perennial plant aloe is native to Africa, namely its arid areas."
+  species: "Helianthus annuus",
+  name: "Sunflower",
+  description: "The common sunflower, is a large annual forb of the genus Helianthus grown as a crop for its edible oil and edible fruits."
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81rMzcWGEDL._AC_SL1500__mld70o.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646334612/plant%20sample/sunflower_nv2wtl.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -113,12 +113,12 @@ task.save!
 
 # plant4
 plant = Plant.new(
-  species: "Ficus lyrata",
-  name: "Fiddle Leaf Fig",
-  description: "Ficus lyrata is a perennial tree plant of the mulberry family that grows in West Africa."
+  species: "Aloe Barbadensis",
+  name: "Aloevera",
+  description: "Aloe vera, sometimes described as a wonder plant is a short-stemmed shrub"
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81d-49hV6vL._AC_SL1500__cz5iyr.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646334612/plant%20sample/aloevera_uebna5.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -145,12 +145,12 @@ task.save!
 
 # plant5
 plant = Plant.new(
-  species: "Spathiphyllum floribundum",
-  name: "Peace Lily",
-  description: "Peace lilies are among the most popular houseplants with their graceful yet minimalistic white flowers."
+  species: "Droseraceae",
+  name: "Venus flytrap",
+  description: "The Venus flytrap is a carnivorous plant native to subtropical wetlands on the East Coast of the United States"
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/61VE4mjT7gL._AC_SL1005__pyvyte.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646334612/plant%20sample/Dionaea_hzl8hl.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -177,12 +177,12 @@ task.save!
 
 # plant6
 plant = Plant.new(
-  species: "Monstera deliciosa",
-  name: "Swiss Cheese Plant",
-  description: "Lush and bold, Swiss Cheese Plant makes a good accent if you have the space."
+  species: "Cactaceae",
+  name: "Cactus",
+  description: "A cactus is a kind of a plant adapted to hot, dry climates."
 )
 
-file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646163161/plant%20sample/81_3WonVCrL._AC_SL1500__qz6zfa.jpg')
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646335397/plant%20sample/cactus_e9prie.jpg')
 plant.photos.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
 plant.save!
 
@@ -206,3 +206,4 @@ task.save!
 #   task_id: task.id
 # )
 # user_task.save!
+puts "All done! 2 users 6 tasks ans 6 plants created"
