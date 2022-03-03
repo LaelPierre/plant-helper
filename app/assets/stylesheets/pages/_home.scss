@@ -1,5 +1,30 @@
 // Specific CSS for your home-page
+// Padding top for the navbar not to overlap with content
 body {
   padding-top: 60px;
   height: 100%;
+  background-color: white;
+}
+
+// Banner design
+.banner {
+  background-image: linear-gradient(252.55deg, rgba(167, 201, 87, 0.8) -31.91%, rgba(167, 201, 87, 0.6) -6.84%, rgba(167, 201, 87, 0.4) 17.19%, white 57.82%, rgba(255, 255, 255, 0) 76.38%), url('banner.jpg');
+  background-size: contain;
+  background-position: left;
+  padding: 150px 0;
+  height: 700px;
+  background-repeat: no-repeat;
+}
+
+.banner h1 {
+  margin: 0;
+  color: #386641;
+  font-size: 48px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.banner p {
+  font-size: 20px;
+  color: black;
 }
