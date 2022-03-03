@@ -1,0 +1,29 @@
+.below-hero-cards {
+  height: 366px;
+  width: 366px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-around;
+  border-radius: 50px;
+  box-shadow: 1px 1px 31px 1px rgba(0, 0, 0, 0.25);
+  margin: 40px;
+  padding: 5px;
+}
+
+.card-heading {
+  padding: 60px 60px 0 60px;
+  font-size: large;
+  font-weight: 900;
+  color: #6A994E;
+}
+
+.card-paragraph {
+
+}
+
+.below-hero-card-image-styling {
+  width: 90px;
+  height: 90px;
+}
