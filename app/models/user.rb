@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :user_plants, dependent: :destroy
   has_many :user_tasks
+  has_one_attached :photo
 end
