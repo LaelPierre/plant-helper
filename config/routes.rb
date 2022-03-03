@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get 'my_plants', to: 'user_plants#index'
   get 'add_info', to: 'pages#add_info'
+  patch 'add_info', to: 'users#update'
 end
