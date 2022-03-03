@@ -14,5 +14,6 @@ class PlantsController < ApplicationController
 
   def show
     @plant = Plant.find(params[:id])
+    @user_plant = UserPlant.new
   end
 end
