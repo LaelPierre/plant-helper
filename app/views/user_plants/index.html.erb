@@ -1,15 +1,35 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Add a plant!
-</button>
 <% if current_user.user_plants.empty? %>
   <p>No plant for now</p>
+  <div class="container">
+    <button type="button" class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <div class="plus-sign">+</div>
+      <div class="add-plant-text">Add a plant</div>
+    </button>
+</div>
+
 <% else %>
-  <% @user_plants.each do |user_plant| %>
-    <%= cl_image_tag user_plant.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
-    <%= user_plant.nickname %>
-  <% end %>
+<ul class="container plants-list">
+  <div class="row">
+    <% @user_plants.each do |user_plant| %>
+      <div class="col-4">
+        <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
+          <%# cl_image_tag user_plant.plant.photos.first.key, height: 200, width: 200, crop: :fill, class: "card-img-top" %>
+          <p class="card-text"><%= user_plant.nickname %></p>
+        </li>
+      </div>
+    <% end %>
+    <div class="col-4">
+      <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <div class="plus-sign">+</div>
+        <div class="add-plant-text">Add a plant</div>
+      </li>
+    </div>
+  </div>
+</ul>
 <% end %>
+
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-xl">
