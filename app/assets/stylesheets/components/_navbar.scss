@@ -1,12 +1,53 @@
-.navbar-lewagon {
+// Basic navbar layout affecting the entire navbar
+.navbar-plant-helper {
   justify-content: space-between;
   background: white;
 }
-
-.navbar-lewagon .navbar-collapse {
+.navbar-plant-helper .navbar-collapse {
   flex-grow: 0;
 }
+.navbar-plant-helper .navbar-brand img {
+  width: 160px;
+}
 
-.navbar-lewagon .navbar-brand img {
+// Code affecting the avatar of the navbar
+#navbarDropdown {
   width: 40px;
+  height: 40px;
+  border: #386641;
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+// Code affecting the login button when user is not logged in
+
+.navbar-light .navbar-nav .nav-link {
+color: #386641;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  &:hover {
+    background-color: #386641;
+    color: white;
+    border-radius: 5px;
+  }
+}
+// Code affecting the dropdown list when clicking on the avatar of the navbar
+.dropdown-item {
+  color: #386641;
+  text-align: center;
+}
+
+.dropdown-item:hover {
+  background-color: #386641;
+  color: white;
+}
+
+.navbar-nav .dropdown-menu {
+  border: #386641;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+
 }
