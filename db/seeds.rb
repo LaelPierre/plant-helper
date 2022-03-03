@@ -206,4 +206,4 @@ task.save!
 #   task_id: task.id
 # )
 # user_task.save!
-puts "All done! 2 users 6 tasks ans 6 plants created"
+puts "All done! 2 users 6 tasks and 6 plants created"
