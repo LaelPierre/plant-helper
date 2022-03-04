@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def update
     current_user.update(user_params)
-    redirect_to my_plants_path
+    redirect_to loader_path
   end
 
   private
