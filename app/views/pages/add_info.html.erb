@@ -1,6 +1,31 @@
+<div class="container h1-container">
+  <h1>Your place</h1>
+</div>
 <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
-  <%= f.input :temperature %>
-  <%= f.input :sun_exposure %>
-  <%= f.input :prefered_day %>
-  <%= f.submit %>
+  <div class="container">
+    <div class="temp-slider">
+      <%= f.input :temperature, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+    </div>
+    <div class="sun-slider">
+  <%= f.input :sun_exposure, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
+    </div>
+    <div class="day-slider">
+ <%= f.input :prefered_day %>
+    </div>
+  </div>
+  <a class="next-button" href="/dashboard">
+    <%= f.submit :Finish, class: "btn btn-secondary standard-button" %>
+  </a>
 <% end %>
+
+
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val;
+        }
+</script>
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput2').value=val;
+        }
+</script>
