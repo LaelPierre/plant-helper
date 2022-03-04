@@ -33,8 +33,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Water requirements",
-  description: "Average Water Needs; Water regularly; do not overwater"
+  name: "Water requirements 1",
+  description: "Add 200ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -65,8 +65,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Sun exposure",
-  description: "Sun to Partial Shade"
+  name: "Water requirements 2",
+  description: "Add 300ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -97,8 +97,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Foliage",
-  description: "You must cut the leaves that are not beautiful "
+  name: "Water requirements 3",
+  description: "Add 300ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -129,8 +129,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Where to grow",
-  description: "Suitable for growing in containers"
+  name: "Fertilizer 1",
+  description: "Add one cup of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -161,8 +161,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Soil pH requirements",
-  description: "6.1 to 6.5 (mildly acidic)"
+  name: "Fertilizer 2",
+  description: "Add two cups of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -193,8 +193,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Propagation Methods",
-  description: "Divide the rootball"
+  name: "Fertilizer 3",
+  description: "Add three cups of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
