@@ -1,0 +1,42 @@
+.info-cards-under-hero {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.below-hero-cards {
+  height: 366px;
+  width: 366px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-around;
+  border-radius: 50px;
+  box-shadow: 1px 1px 31px 1px rgba(0, 0, 0, 0.25);
+  margin: 40px;
+  padding: 5px;
+}
+
+.card-heading {
+  padding: 0 60px 0 60px;
+  font-size: large;
+  font-weight: 900;
+  color: #6A994E;
+  margin: 0;
+}
+
+.card-paragraph {
+  padding: 0 65px 30px 65px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.image-in-hero-card {
+  padding: 30px 0 0 0;
+}
+
+.below-hero-card-image-styling {
+  width: 90px;
+  height: 90px;
+}
