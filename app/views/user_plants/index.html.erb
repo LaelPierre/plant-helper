@@ -1,20 +1,102 @@
-<!-- Button trigger modal -->
+<!-- Card trigger modal -->
 <% if current_user.user_plants.empty? %>
-  <p>No plant for now</p>
-  <div class="container">
-    <button type="button" class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      <div class="plus-sign">+</div>
-      <div class="add-plant-text">Add a plant</div>
-    </button>
-</div>
-
+  <div class="no-plants">
+    <p>Oh it seems that you don’t have any plants for now... Let’s add one below!</p>
+  </div>
+  <ul class="container plants-list">
+    <div class="row">
+      <div class="col-4">
+        <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <div class="plus-sign">+</div>
+          <div class="add-plant-text">Add a plant</div>
+        </li>
+      </div>
+      <div class="col-4">
+        <li class="cardholder greyed-out-card"></li>
+      </div>
+      <div class="col-4">
+        <li class="cardholder greyed-out-card"></li>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+          <li class="cardholder greyed-out-card"></li>
+      </div>
+      <div class="col-4">
+          <li class="cardholder greyed-out-card"></li>
+      </div>
+      <div class="col-4">
+          <li class="cardholder greyed-out-card"></li>
+      </div>
+    </div>
+  </ul>
+<% elsif current_user.user_plants.count == 1 %>
+<ul class="container plants-list">
+  <div class="row">
+    <% @user_plants.each do |user_plant| %>
+      <div class="col-4">
+        <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
+          <p class="card-text"><%= user_plant.nickname %></p>
+        </li>
+      </div>
+    <% end %>
+    <div class="col-4">
+      <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <div class="plus-sign">+</div>
+        <div class="add-plant-text">Add a plant</div>
+      </li>
+    </div>
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+  </div>
+</ul>
+<% elsif current_user.user_plants.count == 2 %>
+<ul class="container plants-list">
+  <div class="row">
+    <% @user_plants.each do |user_plant| %>
+      <div class="col-4">
+        <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
+          <p class="card-text"><%= user_plant.nickname %></p>
+        </li>
+      </div>
+    <% end %>
+    <div class="col-4">
+      <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <div class="plus-sign">+</div>
+        <div class="add-plant-text">Add a plant</div>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+    <div class="col-4">
+      <li class="cardholder greyed-out-card"></li>
+    </div>
+  </div>
+</ul>
 <% else %>
 <ul class="container plants-list">
   <div class="row">
     <% @user_plants.each do |user_plant| %>
       <div class="col-4">
         <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
-          <%# cl_image_tag user_plant.plant.photos.first.key, height: 200, width: 200, crop: :fill, class: "card-img-top" %>
           <p class="card-text"><%= user_plant.nickname %></p>
         </li>
       </div>
@@ -56,8 +138,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-primary">Add my plant</button>
       </div>
     </div>
   </div>
