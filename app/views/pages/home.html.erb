@@ -1,17 +1,37 @@
 <div class="banner">
   <div class="text-center ms-auto me-5 w-50">
     <h1>We Help You Take Care Of <br>Your Plants</h1>
-    <p>A beaufitul home doesn’t have to be a struggle to maintain. <br>With Plant Helper, there is never the need to worry about your plants health. <br>Our website is made to cater to every environemnt. <br>Fill in your homes details to see your plants strive better than ever before.</p>
+    <p>A beaufitul home doesn't have to be a struggle to maintain. <br>With Plant Helper, there is never the need to worry about your plants health. <br>Our website is made to cater to every environemnt. <br>Fill in your homes details to see your plants strive better than ever before.</p>
     <%= link_to "/my_plants", class: "CTA" do %>
-      <button type="button" class="btn btn-primary">Help your plants!</button>
+      <button type="button" class="standard-button btn btn-primary">Help your plants!</button>
     <% end %>
   </div>
 </div>
 
-<div class="below-hero-cards">
-  <%= image_tag("dove.png"), class:"below-hero-card-image-styling"%>
-  <h2 class="card-heading">MINDLESS CARE</h2>
-  <p class="card-paragraph">Taking care of your greenery has never been easier. Get reminders straight to your email when you sign up!</p>
+<div class="info-cards-under-hero">
+  <div class="below-hero-cards">
+    <div class="image-in-hero-card">
+     <%= image_tag "dove.png", class: "below-hero-card-image-styling" %>
+    </div>
+    <h2 class="card-heading">MINDLESS CARE</h2>
+    <p class="card-paragraph">Taking care of your greenery has never been easier. Get reminders straight to your email when you sign up!</p>
+  </div>
+
+  <div class="below-hero-cards">
+    <div class="image-in-hero-card">
+      <%= image_tag "planting.png", class: "below-hero-card-image-styling" %>
+    </div>
+    <h2 class="card-heading">CONSTANT MONITORING</h2>
+    <p class="card-paragraph">Follow your plants life on Your Plants and watch them grow along the way</p>
+  </div>
+
+  <div class="below-hero-cards">
+    <div class="image-in-hero-card">
+      <%= image_tag "plant-tree.png", class: "below-hero-card-image-styling" %>
+    </div>
+    <h2 class="card-heading">HEALTHY PLANTS</h2>
+    <p class="card-paragraph">Our algorythm calculates the perfect watering cycle for your garden.</p>
+  </div>
 </div>
 <br>
 <br>
@@ -53,4 +73,3 @@
 <br>
 <br>
 <br>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis illum sit eos aut, recusandae maiores pariatur exercitationem impedit ea fugiat temporibus! Cumque laborum dolores id excepturi perspiciatis minima eaque minus?</p>
