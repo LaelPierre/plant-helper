@@ -1,12 +1,11 @@
-<% @plants.each do |plant| %>
-  <li>
-    <%= link_to plant_path(plant) do %>
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag plant.photos.first.key, height: 200, width: 200, crop: :fill %>
-        <div class="card-body">
-          <h5 class="card-title"><%= plant.name %></h5>
-        </div>
-      </div>
-    <% end %>
-  </li>
-<% end %>
+<div class="row">
+  <% @plants.each do |plant| %>
+    <div class="col-4">
+      <%= link_to plant_path(plant) do %>
+        <li style ="background-image: url(<%= cl_image_path plant.photos.first.key %>)">
+          <p class="card-text"><%= plant.name %></p>
+        </li>
+      <% end %>
+    </div>
+  <% end %>
+</div>
