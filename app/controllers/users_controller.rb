@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         frequency: rand(1..3)
       )
     end
-    redirect_to dashboard_path
+    redirect_to loader_path
 
   end
 
