@@ -5,12 +5,10 @@ ul.plants-list {
   align-items: flex-end;
   align-content: flex-end;
   padding-left: 0;
-  // position: absolute;
 
   li {
     box-sizing: border-box;
     border-radius: 29px;
-    // background: asset-url('default_plant_card_image.png');
     background-size: cover;
     background-position: center;
     width: 323px;
@@ -24,7 +22,23 @@ ul.plants-list {
     align-items: flex-end;
     justify-content: center;
 
-    a {
+    &.add-plant-card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      padding-left: 0;
+      flex-direction: column;
+      width: 323px;
+      height: 465px;
+      box-sizing: border-box;
+      border-radius: 29px;
+      background-color: white;
+      box-shadow: 1px 1px 31px rgba(0, 0, 0, 0.25);
+    }
+
+    p {
       text-decoration: none;
       color: #386641;
 
@@ -51,6 +65,7 @@ ul.plants-list {
   margin-bottom: 0;
   border-radius: 10px 10px 0 0;
   color: #386641;
+  text-decoration: none !important;
 }
 
 .greyed-out-card {
@@ -58,22 +73,6 @@ ul.plants-list {
   border: 3px dashed #386641;
 }
 
-.add-plant-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  padding-left: 0;
-  // position: absolute;
-  flex-direction: column;
-  width: 323px;
-  height: 465px;
-  box-sizing: border-box;
-  border-radius: 29px;
-  background-color: white;
-  box-shadow: 1px 1px 31px rgba(0, 0, 0, 0.25);
-}
 .add-plant-card:hover {
   cursor: pointer;
 }
