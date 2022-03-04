@@ -1,19 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-6 offset-3">
-      <h1>Creating your tasks...</h1>
-      <br><br>
-      <%= image_tag("treeLoader.gif") %>
-      <h3>Doing stuff...</h3>
-      <h3>Creating tasks...</h3>
-      <h3>Watering your plants...</h3>
-      <h3>Adding some fertilizer...</h3>
-    </div>
-  </div>
+<div class="container h1-container">
+  <h1>Creating your tasks...</h1>
+</div>
+<div class="container animation-container">
+  <%= image_tag("plantgrow.gif", style: "border-radius: 100%") %>
 </div>
 
 <script>
   window.setTimeout(function() {
       window.location.href = '<%= dashboard_path %>';
-  }, 6000);
+  }, 10000);
 </script>
