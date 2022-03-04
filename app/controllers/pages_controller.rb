@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def create_tasks
+  def loader
     sleep(4.0)
     redirect_to my_plants_path
   end

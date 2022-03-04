@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'user_tasks#index'
   get 'add_info', to: 'pages#add_info'
   patch 'add_info', to: 'users#update'
-  get 'create_tasks', to: 'pages#create_tasks'
+  get 'create_tasks', to: 'pages#loader'
 end
