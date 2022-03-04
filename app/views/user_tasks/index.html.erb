@@ -3,25 +3,53 @@
 </div>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <h2>Today's tasks</h2>
+  <h2>Today's tasks</h2>
+</div>
+
+<div class="container">
+  <div class="row task-card-container g-0">
     <% @user_tasks.each do |user_task| %>
       <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-      <div class="card mb-3" style="max-width: 740px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"><%= @current_user_plant.first.nickname %></h5>
-              <p class="card-text"><%= user_task.task.description %></p>
-              <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
-            </div>
+      <div class="card task-card mb-3" style="max-width: 740px;">
+        <div class="col-md-4">
+          <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div class="col-md-8">
+          <h2 class="card-title"><%= @current_user_plant.first.nickname %></h2>
+          <div class="card-body task-card" style="display: flex;">
+            <p class="card-text"><%= user_task.task.description %></p>
+            <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-<h2>Future tasks</h2>
+
+<div class="container">
+  <br>
+  <br>
+  <h2>Next tasks</h2>
+  <br>
+  <br>
+</div>
+
+<div class="container">
+  <div class="row task-card-container g-0">
+    <% @user_tasks.each do |user_task| %>
+      <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
+      <div class="card task-card mb-3" style="max-width: 740px;">
+        <div class="col-md-4">
+          <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
+        </div>
+        <div class="col-md-8">
+          <h2 class="card-title"><%= @current_user_plant.first.nickname %></h2>
+          <div class="card-body task-card" style="display: flex;">
+            <p class="card-text"><%= user_task.task.description %></p>
+            <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
