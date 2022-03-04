@@ -4,13 +4,13 @@
 <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
   <div class="container">
     <div class="temp-slider">
-      <%= f.input :temperature, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+      <%= f.input :temperature, required: true, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
     </div>
     <div class="sun-slider">
-  <%= f.input :sun_exposure, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
+  <%= f.input :sun_exposure, required: true, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
     </div>
     <div class="day-slider">
- <%= f.input :prefered_day %>
+ <%= f.input :prefered_day, required: true %>
     </div>
   </div>
   <a class="next-button" href="/dashboard">
