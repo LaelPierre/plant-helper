@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
   def update
     current_user.update(user_params)
-    redirect_to my_plants_path
+    @tasks = Task.all.map(&:id)
+    user_plants = current_user.user_plants
+    user_plants.each do |user_plant|
+      @user_task = UserTask.create!(
+        task_id: @tasks.sample,
+        user_plant_id: user_plant.id,
+        frequency: rand(1..3)
+      )
+    end
+    redirect_to dashboard_path
   end
 
   private

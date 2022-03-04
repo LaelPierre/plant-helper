@@ -1,6 +1,6 @@
 <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
-  <%= f.input :temperature %>
-  <%= f.input :sun_exposure %>
-  <%= f.input :prefered_day %>
+  <%= f.input :temperature, required: true %>
+  <%= f.input :sun_exposure, required: true %>
+  <%= f.input :prefered_day, required: true %>
   <%= f.submit %>
 <% end %>
