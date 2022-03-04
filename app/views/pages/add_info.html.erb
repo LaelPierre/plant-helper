@@ -1,22 +1,30 @@
-<div class="container h1-container">
+<div class="add-info-container container h1-container">
   <h1>Your place</h1>
-</div>
-<%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
-  <div class="container">
-    <div class="temp-slider">
-      <%= f.input :temperature, required: true, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+    <div class="step-trackers">
+      <div class="circular-step-tracker"></div>
+      <div class="circular-step-tracker this-step"></div>
     </div>
-    <div class="sun-slider">
-  <%= f.input :sun_exposure, required: true, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
+    <div><h2 class="add-info-h2">Tell us about your place</h2></div>
+    <div><p>Once again, leave the details to us. Please folow the instructions below and provide us with an estimate</p></div>
+  <div class="info-container">
+  <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
+    <div class="container">
+      <div class="temp-slider">
+        <%= f.input :temperature, required: true, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+      </div>
+      <div class="sun-slider">
+    <%= f.input :sun_exposure, required: true, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
+      </div>
+      <div class="day-slider">
+  <%= f.input :prefered_day, required: true %>
+      </div>
     </div>
-    <div class="day-slider">
- <%= f.input :prefered_day, required: true %>
-    </div>
+    <a class="next-button">
+      <%= f.submit :Finish, class: "call-to-action-landing-page btn btn-secondary standard-button" %>
+    </a>
+  <% end %>
   </div>
-  <a class="next-button">
-    <%= f.submit :Finish, class: "btn btn-secondary standard-button" %>
-  </a>
-<% end %>
+</div>
 
 
 <script>

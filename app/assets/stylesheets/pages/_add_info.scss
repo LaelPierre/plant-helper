@@ -1,0 +1,36 @@
+.add-info-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.step-trackers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 20px 0 50px 0;
+}
+
+.circular-step-tracker {
+  background-color: #386641;
+  opacity: 40%;
+  height: 15px;
+  width: 15px;
+  border-radius: 360%;
+  margin: 3px;
+}
+
+.this-step {
+  opacity: 100%;
+}
+
+
+.add-info-h2 {
+  color: #386641;
+  font-size: larger;
+  font-weight: 600;
+}
+.info-container {
+  margin-top: 30px;
+}
