@@ -8,7 +8,6 @@ ul.plants-list {
   // position: absolute;
 
   li {
-    border: 1px solid #386641;
     box-sizing: border-box;
     border-radius: 29px;
     // background: asset-url('default_plant_card_image.png');
@@ -34,6 +33,10 @@ ul.plants-list {
       }
     }
   }
+}
+
+.cardholder {
+  background: asset-url('default_plant_card_image.png');
 }
 
 .card-text {
@@ -90,8 +93,23 @@ ul.plants-list {
 
 
 .add-plant-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #386641;
   font-size: 24px;
   font-weight: bold;
   padding-top: 10px;
+}
+
+
+.no-plants {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #386641;
+  font-style: italic;
 }
