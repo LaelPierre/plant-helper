@@ -62,6 +62,9 @@
     </div>
   </div>
 </ul>
+<div class="next-button">
+    <button type="button" class="btn btn-primary standard-button">Add my plant</button>
+</div>
 <% elsif current_user.user_plants.count == 2 %>
 <ul class="container plants-list">
   <div class="row">
@@ -91,6 +94,9 @@
     </div>
   </div>
 </ul>
+<div class="next-button">
+  <a href="/add_info" class="btn btn-primary standard-button">Next</a>
+</div>
 <% else %>
 <ul class="container plants-list">
   <div class="row">
@@ -117,26 +123,19 @@
   <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <%# <h2 class="modal-title" id="staticBackdropLabel">Select your plant!</h2> %>
         <button type="button" class="btn-close button-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" data-controller="plant-card">
         <div class="search-form-container">
           <form novalidate="novalidate" data-plant-card-target="form" class="simple_form search search-input-container" action="<%= plants_path %>" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group search-input-container">
-              <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" data-action="keyup->plant-card#search" data-plant-card-target="searchBar" />
+              <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" data-action="keyup->plant-card#search" data-plant-card-target="searchBar" placeholder="Find your plant..." />
             </div>
           </form>
         </div>
-        <%# <div class="container"> %>
         <ul class="container plants-list" data-plant-card-target="content">
-          <div class="row">
-            <div class="col-4">
-              <div><%= render "plants/list", class: "plants-list", locals: { plants: @plants } %></div>
-            </div>
-          </div>
+          <div><%= render "plants/list", class: "plants-list", locals: { plants: @plants } %></div>
         </ul>
-        <%# </div> %>
 
       </div>
       <div class="modal-footer">
