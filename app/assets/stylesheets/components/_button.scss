@@ -16,3 +16,20 @@
   background-color: #6A994E;
   border: #6A994E;
 }
+
+.button-close {
+  background-color: #BC4749;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  color: transparent;
+  background-image: none;
+}
+
+.button-close:hover {
+  background: transparent url("cross.png") center/1em auto no-repeat;
+  background-color: #BC4749;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+}

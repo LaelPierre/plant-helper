@@ -1,7 +1,7 @@
 <!-- Card trigger modal -->
 <% if current_user.user_plants.empty? %>
   <div class="no-plants">
-    <p>Oh it seems that you don’t have any plants for now... Let’s add one below!</p>
+    <p>Oh it seems that you don’t have any plants for now...<br><br>Let’s add one below!</p>
   </div>
   <ul class="container plants-list">
     <div class="row">
@@ -117,29 +117,31 @@
   <div class="modal-dialog modal-dialog-scrollable modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Choose your plant!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <%# <h2 class="modal-title" id="staticBackdropLabel">Select your plant!</h2> %>
+        <button type="button" class="btn-close button-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" data-controller="plant-card">
-
-        <form novalidate="novalidate" data-plant-card-target="form" class="simple_form search" action="<%= plants_path %>" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-          <div class="search-form-control form-group">
-            <input class="form-control string required" type="text" name="search[query]" id="search_query" data-action="keyup->plant-card#search" data-plant-card-target="searchBar" />
-          </div>
-        </form>
-
-        <div class="container">
-          <div class="row justify-content-center">
-            <ul class="plants-list" data-plant-card-target="content">
-              <%= render "plants/list", locals: { plants: @plants } %>
-            </ul>
-          </div>
+        <div class="search-form-container">
+          <form novalidate="novalidate" data-plant-card-target="form" class="simple_form search search-input-container" action="<%= plants_path %>" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <div class="search-form-control form-group search-input-container">
+              <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" data-action="keyup->plant-card#search" data-plant-card-target="searchBar" />
+            </div>
+          </form>
         </div>
+        <%# <div class="container"> %>
+        <ul class="container plants-list" data-plant-card-target="content">
+          <div class="row">
+            <div class="col-4">
+              <div><%= render "plants/list", class: "plants-list", locals: { plants: @plants } %></div>
+            </div>
+          </div>
+        </ul>
+        <%# </div> %>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
-        <button type="button" class="btn btn-primary">Add my plant</button>
+        <button type="button" class="btn btn-secondary standard-button" data-bs-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-primary standard-button">Add my plant</button>
       </div>
     </div>
   </div>
