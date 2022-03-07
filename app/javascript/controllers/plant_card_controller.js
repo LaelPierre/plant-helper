@@ -4,11 +4,11 @@ export default class extends Controller {
   static targets = ["content", "searchBar", "form"]
 
   connect() {
-    console.log(this.contentTarget)
+    // console.log(this.contentTarget)
   }
 
   search() {
-    console.log(this.formTarget);
+    // console.log(this.formTarget);
 
     const url = `${this.formTarget.action}?query=${this.searchBarTarget.value}`
     fetch(url, { headers: { "Accept": "text/plain" } })

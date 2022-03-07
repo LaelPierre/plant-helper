@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   def index
+    @user_plant = UserPlant.new
     if params[:query].present?
       @plants = Plant.where("name ILIKE ?", "%#{params[:query]}%")
     else
