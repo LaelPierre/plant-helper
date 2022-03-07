@@ -33,8 +33,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "water",
-  description: "Dracaena trifasciata is succulent that stores moisture in its fleshy leaves"
+  name: "Water requirements 1",
+  description: "Add 200ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -65,8 +65,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Soil",
-  description: "It is advisable to use a ready-made universal potting mix."
+  name: "Water requirements 2",
+  description: "Add 300ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -97,8 +97,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Fertilizer",
-  description: "Mineral fertilizers are used to feed the plants once every four weeks, from the second half of spring to the first weeks of fall."
+  name: "Water requirements 3",
+  description: "Add 300ml of water"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -129,8 +129,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Propagation",
-  description: "Ficus cuttings are propagated in the spring or early summer."
+  name: "Fertilizer 1",
+  description: "Add one cup of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -161,8 +161,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Temperature",
-  description: "In the spring and summer, the temperature should be at least 65°F (18°C), and it is preferable to keep it around 72°F (22°C)."
+  name: "Fertilizer 2",
+  description: "Add two cups of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
@@ -193,8 +193,8 @@ plant.save!
 # user_plant.save!
 
 task = Task.new(
-  name: "Sunlight",
-  description: "They prefer a filtered morning sun and afternoon shade."
+  name: "Fertilizer 3",
+  description: "Add three cups of fertilizer"
 )
 
 file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
