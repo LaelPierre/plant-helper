@@ -13,8 +13,8 @@
           <p><%= plant.description %></p>
           <%= simple_form_for @user_plant do |f| %>
             <%= f.input :nickname, input_html: { value: plant.name } %>
-            <%= f.input :plant_age,  collection: UserPlant.plant_ages.keys %>
-            <%= f.input :plant_health, collection: UserPlant.plant_healths.keys %>
+            <%= f.input :plant_age,  collection: UserPlant.plant_ages.keys, as: :radio_buttons %>
+            <%= f.input :plant_health, collection: UserPlant.plant_healths.keys, as: :radio_buttons %>
             <%= hidden_field_tag 'plant_id', plant.id %>
             <%= f.submit %>
           <% end %>
