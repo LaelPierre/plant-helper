@@ -5,15 +5,22 @@
   <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
     <div class="container">
       <div class="temp-slider">
-        <%= f.input :temperature, as: :range, input_html:{
-                   data: { slider_target: "tempSlider" },
-                   min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+        <%= f.input :temperature, as: :range,
+                input_html:{
+                   data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
+                   min:"15", max:"30"},
+                label_html: {data: { slider_target: "tempLabel"}, class: "temperature-slider"}%>
       </div>
       <div class="sun-slider">
-    <%= f.input :sun_exposure, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
+        <%= f.input :sun_exposure, as: :range,
+                input_html:{
+                   data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
+                   min:"0", max:"10"},
+                label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
+      </div>
       </div>
       <div class="day-slider">
-  <%= f.input :prefered_day %>
+   <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ] %>
       </div>
     </div>
     <a class="next-button" href="/dashboard">
