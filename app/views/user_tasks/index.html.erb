@@ -2,54 +2,37 @@
   <h1>Dashboard</h1>
 </div>
 
-<div class="container">
-  <h2>Today's tasks</h2>
-</div>
-
-<div class="container">
-  <div class="row task-card-container g-0">
-    <% @user_tasks.each do |user_task| %>
-      <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-      <div class="card task-card mb-3" style="max-width: 740px;">
-        <div class="col-md-4">
-          <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
-        </div>
-        <div class="col-md-8">
-          <h2 class="card-title"><%= @current_user_plant.first.nickname %></h2>
-          <div class="card-body task-card" style="display: flex;">
-            <p class="card-text"><%= user_task.task.description %></p>
-            <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
+<div class="container global">
+  <div class="col-8 container today-tasks">
+    <h2 class="task-h2">Your next tasks</h2>
+    <ul class="container tasks-list">
+      <% @user_tasks.each do |user_task| %>
+        <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
+        <li>
+          <div class="card task-card">
+            <div class="w-25 img-container">
+              <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
+            </div>
+            <div class="w-75 task-details-container">
+              <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
+              <div class="w-70 card-body">
+                <p class="card-text"><%= user_task.task.description %></p>
+                <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-4 container">
+    <p class="calendar">This is where the calendar will go</p>
   </div>
 </div>
-
 <div class="container">
   <br>
   <br>
   <h2>Next tasks</h2>
   <br>
   <br>
-</div>
-
-<div class="container">
-  <div class="row task-card-container g-0">
-    <% @user_tasks.each do |user_task| %>
-      <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-      <div class="card task-card mb-3" style="max-width: 740px;">
-        <div class="col-md-4">
-          <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, crop: :fill %>
-        </div>
-        <div class="col-md-8">
-          <h2 class="card-title"><%= @current_user_plant.first.nickname %></h2>
-          <div class="card-body task-card" style="display: flex;">
-            <p class="card-text"><%= user_task.task.description %></p>
-            <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
