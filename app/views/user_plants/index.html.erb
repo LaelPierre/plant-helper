@@ -65,64 +65,60 @@
     </div>
   </div>
 </ul>
-<div class="next-button">
-  <a href="/add_info" class="btn btn-primary standard-button">Next</a>
-</div>
 <% elsif current_user.user_plants.count == 2 %>
-<ul class="container plants-list">
-  <div class="row">
-    <% @user_plants.each do |user_plant| %>
+  <ul class="container plants-list">
+    <div class="row">
+      <% @user_plants.each do |user_plant| %>
+        <div class="col-4">
+          <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
+            <p class="card-text"><%= user_plant.nickname %></p>
+          </li>
+        </div>
+      <% end %>
       <div class="col-4">
-        <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
-          <p class="card-text"><%= user_plant.nickname %></p>
+        <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <div class="plus-sign">+</div>
+          <div class="add-plant-text">Add a plant</div>
         </li>
       </div>
-    <% end %>
-    <div class="col-4">
-      <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <div class="plus-sign">+</div>
-        <div class="add-plant-text">Add a plant</div>
-      </li>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-4">
-      <li class="cardholder greyed-out-card"></li>
+    <div class="row">
+      <div class="col-4">
+        <li class="cardholder greyed-out-card"></li>
+      </div>
+      <div class="col-4">
+        <li class="cardholder greyed-out-card"></li>
+      </div>
+      <div class="col-4">
+        <li class="cardholder greyed-out-card"></li>
+      </div>
     </div>
-    <div class="col-4">
-      <li class="cardholder greyed-out-card"></li>
-    </div>
-    <div class="col-4">
-      <li class="cardholder greyed-out-card"></li>
-    </div>
-  </div>
-</ul>
-<div class="next-button">
-  <a href="/add_info" class="btn btn-primary standard-button">Next</a>
-</div>
+  </ul>
 <% else %>
-<ul class="container plants-list">
-  <div class="row">
-    <% @user_plants.each do |user_plant| %>
+  <ul class="container plants-list">
+    <div class="row">
+      <% @user_plants.each do |user_plant| %>
+        <div class="col-4">
+          <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
+            <p class="card-text"><%= user_plant.nickname %></p>
+          </li>
+        </div>
+      <% end %>
       <div class="col-4">
-        <li style="background-image: url(<%= cl_image_path user_plant.plant.photos.first.key %>)">
-          <p class="card-text"><%= user_plant.nickname %></p>
+        <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <div class="plus-sign">+</div>
+          <div class="add-plant-text">Add a plant</div>
         </li>
       </div>
-    <% end %>
-    <div class="col-4">
-      <li class="add-plant-card" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <div class="plus-sign">+</div>
-        <div class="add-plant-text">Add a plant</div>
-      </li>
     </div>
-  </div>
-</ul>
-<div class="next-button">
-  <a href="/add_info" class="btn btn-primary standard-button">Next</a>
-</div>
+  </ul>
 <% end %>
 
+<% if current_user.onboarded == false && current_user.user_plants.count >= 1 %>
+  <div class="next-button">
+    <a href="/add_info" class="btn btn-primary standard-button">Next</a>
+  </div>
+<% end %>
 
 <!-- Modal -->
 <div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
