@@ -141,7 +141,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.optional :step
     b.use :label, class: 'form-label'
-    b.use :input, class: 'form-range', error_class: 'is-invalid', valid_class: 'is-valid'
+    b.use :input, class: '', error_class: 'is-invalid', valid_class: 'is-valid'
     b.use :full_error, wrap_with: { class: 'invalid-feedback' }
     b.use :hint, wrap_with: { class: 'form-text' }
   end
@@ -253,7 +253,7 @@ SimpleForm.setup do |config|
     b.optional :step
     b.use :label, class: 'col-sm-3 col-form-label pt-0'
     b.wrapper :grid_wrapper, class: 'col-sm-9' do |ba|
-      ba.use :input, class: 'form-range', error_class: 'is-invalid', valid_class: 'is-valid'
+      ba.use :input, class: '', error_class: 'is-invalid', valid_class: 'is-valid'
       ba.use :full_error, wrap_with: { class: 'invalid-feedback' }
       ba.use :hint, wrap_with: { class: 'form-text' }
     end

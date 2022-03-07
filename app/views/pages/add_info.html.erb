@@ -8,17 +8,18 @@
   <div class="circular-step-tracker this-step">
   </div>
 </div>
- <div><h2 class="add-info-h2">Tell us about your place</h2></div>
+<div class="add-info-text">
  <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the infomation below on your plants homes.</p></div>
+</div>
  <div data-controller="slider">
   <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
-    <div class="container">
+    <div class="container info-sliders">
       <div class="temp-slider">
         <%= f.input :temperature, as: :range,
                 input_html:{
                    data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
-                   min:"15", max:"30"},
-                label_html: {data: { slider_target: "tempLabel"}, class: "temperature-slider"}%>
+                   min:"15", max:"30", value:"23", class: "temperature-slider"},
+                label_html: {data: { slider_target: "tempLabel"}}%>
       </div>
       <div class="sun-slider">
         <%= f.input :sun_exposure, as: :range,
@@ -26,6 +27,7 @@
                    data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
                    min:"0", max:"10"},
                 label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
+      </div>
       <div class="day-slider">
         <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ] %>
       </div>
