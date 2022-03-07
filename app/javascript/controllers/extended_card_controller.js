@@ -16,7 +16,7 @@ export default class extends Controller {
   }
 
   hideCard() {
-    console.log(this.element);
+    console.log("connected");
     this.extendCardTarget.classList.remove("d-flex")
     this.extendCardTarget.classList.add("d-none")
     this.extendCardTarget.classList.remove("plant-info-popup")

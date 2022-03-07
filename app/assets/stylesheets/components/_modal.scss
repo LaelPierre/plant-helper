@@ -71,4 +71,88 @@ input[type=text]::placeholder {
   .extended-card-form {
     padding: 16px;
   }
+
+  legend {
+    float: none;
+  }
+
+  fieldset {
+    display: flex;
+    gap: 20px;
+
+    input[type="radio"] {
+      position: absolute;
+      transform: scale(0);
+
+      & + label[for="user_plant_plant_age_advanced"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646686972/plant%20sample/plant-advanced_telfkr.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+      & + label[for="user_plant_plant_age_young"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646687213/plant%20sample/plant-young_nwym5m.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+      & + label[for="user_plant_plant_age_old"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646687213/plant%20sample/plant-old_yjy3cp.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+
+      & + label[for="user_plant_plant_health_bad"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646687221/plant%20sample/plant-bad_jbwpfq.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+      & + label[for="user_plant_plant_health_acceptable"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646687221/plant%20sample/plant-acceptable_x1td3v.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+      & + label[for="user_plant_plant_health_good"] {
+        cursor: pointer;
+        content: url("https://res.cloudinary.com/dcgubphgl/image/upload/v1646687221/plant%20sample/plant-good_het74o.png");
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #F2E8D0;
+      }
+
+      &:checked + label[for="user_plant_plant_age_young"] {
+        border: 2px solid #69994D;
+      }
+      &:checked + label[for="user_plant_plant_age_advanced"] {
+        border: 2px solid #69994D;
+      }
+      &:checked + label[for="user_plant_plant_age_old"] {
+        border: 2px solid #69994D;
+      }
+
+      &:checked + label[for="user_plant_plant_health_bad"] {
+        border: 2px solid #69994D;
+      }
+      &:checked + label[for="user_plant_plant_health_acceptable"] {
+        border: 2px solid #69994D;
+      }
+      &:checked + label[for="user_plant_plant_health_good"] {
+        border: 2px solid #69994D;
+      }
+    }
+  }
 }
