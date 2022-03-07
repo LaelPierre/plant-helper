@@ -10,8 +10,8 @@ class UsersController < ApplicationController
         frequency: rand(1..3)
       )
     end
+    current_user.update(onboarded: true)
     redirect_to loader_path
-
   end
 
   private
