@@ -29,7 +29,23 @@ def fetch_plant_urls
 end
 
 # Calling the method
-fetch_plant_urls()
+# fetch_plant_urls()
+
+def plant_url
+  counter = 1
+  100.times do
+    begin
+      url = "https://myplantin.com/plant/#{counter}"
+      scrape_plant(url)
+    rescue
+      next
+    end
+    p counter += 1
+  end
+  p results
+  p results.size
+end
+plant_url()
 
 
 # 2nd Part
@@ -52,7 +68,7 @@ def scrape_plant(url)
   puts description = html_doc.search('.plant-description_plantDescription__paragraph__FoFfa').text.strip
 
   # Search the doc to get the title
-  pp lightenibg = html_doc.search('.plant-description_climate__value__hQAg4')[0].text.strip
+  pp lightening = html_doc.search('.plant-description_climate__value__hQAg4')[0].text.strip
 
   # Search the doc to get the title
   pp temperature = html_doc.search('.plant-description_climate__value__hQAg4')[1].text.strip
