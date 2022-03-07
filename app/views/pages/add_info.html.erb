@@ -1,39 +1,51 @@
 <div class="add-info-container container h1-container">
   <h1>Your place</h1>
-    <div class="step-trackers">
-      <div class="circular-step-tracker"></div>
-      <div class="circular-step-tracker this-step"></div>
-    </div>
-    <div><h2 class="add-info-h2">Tell us about your place</h2></div>
-    <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the infomation below on your plants homes.</p></div>
-  <div class="info-container">
+</div>
+
+<div class="step-trackers">
+  <div class="circular-step-tracker">
+  </div>
+  <div class="circular-step-tracker this-step">
+  </div>
+</div>
+ <div><h2 class="add-info-h2">Tell us about your place</h2></div>
+ <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the infomation below on your plants homes.</p></div>
+ <div data-controller="slider">
   <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
     <div class="container">
       <div class="temp-slider">
-        <%= f.input :temperature, required: true, id: "textInput", as: :range, input_html:{ min:"15", max:"30", oninput:"updateTextInput(this.value)"} %>
+        <%= f.input :temperature, as: :range,
+                input_html:{
+                   data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
+                   min:"15", max:"30"},
+                label_html: {data: { slider_target: "tempLabel"}, class: "temperature-slider"}%>
       </div>
       <div class="sun-slider">
-    <%= f.input :sun_exposure, required: true, id: "textInput2", as: :range, input_html:{ min:"0", max:"10", oninput:"updateTextInput(this.value)"} %>
-      </div>
+        <%= f.input :sun_exposure, as: :range,
+                input_html:{
+                   data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
+                   min:"0", max:"10"},
+                label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
       <div class="day-slider">
-  <%= f.input :prefered_day, required: true %>
+        <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ] %>
       </div>
     </div>
-    <a class="next-button">
-      <%= f.submit :Finish, class: "call-to-action-landing-page btn btn-secondary standard-button" %>
+    <a class="next-button" href="/dashboard">
+      <%= f.submit :Finish, class: "btn btn-secondary standard-button" %>
     </a>
   <% end %>
-  </div>
 </div>
 
 
+<%#
 <script>
-function updateTextInput(val) {
-          document.getElementById('textInput').value=val;
-        }
-</script>
-<script>
-function updateTextInput(val) {
-          document.getElementById('textInput2').value=val;
-        }
-</script>
+// function updateTextInput(val) {
+//           document.getElementById('user_temperature').value=val;
+//         }
+// </script>
+// <script>
+// function updateTextInput(val) {
+//           document.getElementById('textInput2').value=val;
+//         }
+
+</script> %>
