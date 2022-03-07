@@ -20,7 +20,7 @@ User.create!(email: "test1@test.com", password: "123456")
 # First Part
 def plant_url
   counter = 1
-  10.times do
+  20.times do
     counter += 1
     begin
       puts url = "https://myplantin.com/plant/#{counter}"
@@ -88,14 +88,14 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Water requirements 1",
-#   description: "Add 200ml of water"
-# )
+task = Task.new(
+  name: "Water requirements 1",
+  description: "Add 200ml of water"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
@@ -120,14 +120,14 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Water requirements 2",
-#   description: "Add 300ml of water"
-# )
+task = Task.new(
+  name: "Water requirements 2",
+  description: "Add 300ml of water"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
@@ -152,14 +152,14 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Water requirements 3",
-#   description: "Add 300ml of water"
-# )
+task = Task.new(
+  name: "Water requirements 3",
+  description: "Add 300ml of water"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
@@ -184,14 +184,14 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Fertilizer 1",
-#   description: "Add one cup of fertilizer"
-# )
+task = Task.new(
+  name: "Fertilizer 1",
+  description: "Add one cup of fertilizer"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
@@ -216,14 +216,14 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Fertilizer 2",
-#   description: "Add two cups of fertilizer"
-# )
+task = Task.new(
+  name: "Fertilizer 2",
+  description: "Add two cups of fertilizer"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
@@ -248,18 +248,18 @@ plant_url
 # # )
 # # user_plant.save!
 
-# task = Task.new(
-#   name: "Fertilizer 3",
-#   description: "Add three cups of fertilizer"
-# )
+task = Task.new(
+  name: "Fertilizer 3",
+  description: "Add three cups of fertilizer"
+)
 
-# file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
-# task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
-# task.save!
+file = URI.open('https://res.cloudinary.com/dcgubphgl/image/upload/v1646164792/plant%20sample/23458811_ug22ls.jpg')
+task.photo.attach(io: file, filename: 'test1_upload.png', content_type: 'image/png')
+task.save!
 
 # # user_task = UserTask.new(
 # #   user_plant_id: user_plant.id,
 # #   task_id: task.id
 # # )
 # # user_task.save!
-puts "All done! 2 users and 10 plants created"
+puts "All done! 2 users 6 tasks and 10 plants created"
