@@ -21,7 +21,6 @@ def fetch_plant_urls
   # Iterate over the results to extract only the link values
   links = html_doc.search(selector).first(5).map do |element|
     endpoint = element.attribute('href').value
-    pp element
     "https://myplantin.com/plant/#{endpoint}"
   end
 
@@ -30,7 +29,7 @@ def fetch_plant_urls
 end
 
 # Calling the method
-pp fetch_plant_urls()
+fetch_plant_urls()
 
 
 # 2nd Part
@@ -67,14 +66,3 @@ def scrape_plant(url)
 end
 
 scrape_plant("https://myplantin.com/plant/8")
-
-# # {
-# #     cast: [ "Christian Bale", "Heath Ledger", "Aaron Eckhart" ],
-# #     director: "Christopher Nolan",
-# #     storyline: "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-# #     title: "The Dark Knight",
-# #     year: 2008
-# #   }
-
-# # Calling the method (should return The Dark Knight Infos)
-# scrape_movie('https://www.imdb.com/title/tt0468569/')
