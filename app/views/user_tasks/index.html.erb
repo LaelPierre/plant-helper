@@ -27,6 +27,9 @@
   </div>
   <div class="col-4 container">
     <p class="calendar">This is where the calendar will go</p>
+    <%= month_calendar do |date| %>
+      <%= date.day %>
+    <% end %>
   </div>
 </div>
 <div class="container">
