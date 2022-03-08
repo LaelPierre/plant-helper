@@ -11,6 +11,14 @@ class UserPlantsController < ApplicationController
     @user_plant.plant = @plant
     @user_plant.user = current_user
     if @user_plant.save
+      if current_user.onboarded == true
+        @tasks = Task.all.map(&:id)
+        @user_task = UserTask.create!(
+          task_id: @tasks.sample,
+          user_plant_id: @user_plant.id,
+          frequency: rand(1..3)
+        )
+      end
       redirect_to my_plants_path
     else
       render 'plants/show'
