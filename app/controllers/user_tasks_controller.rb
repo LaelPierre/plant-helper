@@ -1,6 +1,6 @@
 class UserTasksController < ApplicationController
   def index
-    @user_tasks = current_user.user_tasks
+    @user_tasks = current_user.user_tasks.where(done: false)
   end
 
   def new
@@ -18,6 +18,11 @@ class UserTasksController < ApplicationController
     else
       render new
     end
+  end
+
+  def update
+    UserTask.find(params[:id]).update!(done: true)
+    redirect_to dashboard_path
   end
 
   private
