@@ -76,12 +76,13 @@
 #user_prefered_day {
   border: 3px solid #386641;
   border-radius: 60px;
+  text-align: center;
 }
 
 #user_temperature,
 #user_sun_exposure {
-  background: #6A994E;
-  border: solid 1px #6A994E;
+  background: #386641;
+  border: solid 1px #386641;
   border-radius: 8px;
   height: 5px;
   width: 100%;
@@ -113,4 +114,16 @@
 .range-value {
   color: #386641;
   font-weight: bold;
+}
+
+
+.user_temperature, .user_sun_exposure, .user_prefered_day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+hr {
+  border: solid 1px #386641;
 }

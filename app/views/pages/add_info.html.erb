@@ -19,7 +19,7 @@
         <%= f.input :temperature, as: :range,
                 input_html:{
                   data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
-                   min:"17", max:"25", value:"21", classs: "temperature-slider"},
+                   min:"17", max:"25", value:"21", class: "temperature-slider"},
                 label_html: {data: { slider_target: "tempLabel"}}%>
       </div>
       <%= image_tag "light-bulb.png", class: "add-info-images"%>
