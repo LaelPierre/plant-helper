@@ -36,11 +36,12 @@
   margin-top: 30px;
 }
 
-.add-info-text{
+.add-info-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin: 10px 300px 40px 300px;
 }
 
 .info-sliders {
@@ -48,86 +49,41 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  align-content: space-between;
+}
+
+.add-info-images{
+  width: 80px;
+  height: 80px;
+  margin-top: 40px;
 }
 
 .temp-slider {
   width: 400px;
+  margin-top: 40px;
 }
-
-// .temperature-slider {
-//   background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
-//   border: solid 5px #82CFD0;
-//   border-radius: 8px;
-//   height: 7px;
-//   outline: none;
-//   // transition: background 450ms ease-in;
-//   -webkit-appearance: none;
-// }
-
-// input[type="range" i] {
-//   background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
-//   border: solid 5px #82CFD0;
-//   border-radius: 8px;
-//   height: 7px;
-//   outline: none;
-//   // transition: background 450ms ease-in;
-//   -webkit-appearance: none;
-//   color: #82CFD0;
-// }
 
 .sun-slider {
   width: 400px;
+  margin-top: 40px;
 }
 .day-slider {
-  width: 400px;
+  width: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-// @media screen and (-webkit-min-device-pixel-ratio:0) {
-//   input[type='range'] {
-//     overflow: hidden;
-//     width: 400px;
-//     -webkit-appearance: none;
-//     background-color: transparent;
-//   }
-
-//   input[type='range']::-webkit-slider-runnable-track {
-//     height: 6px;
-//     -webkit-appe6rance: none;
-//     color: #386641;
-//     margin-top: -1px;
-//   }
-
-//   input[type='range']::-webkit-slider-thumb {
-//     width: 20px;
-//     -webkit-appearance: none;
-//     height: 20px;
-//     cursor: pointer;
-//     background: #386641;
-//     box-shadow: transparent;
-//   }
-
-// }
-// /** FF*/
-// input[type="range"]::-moz-range-progress {
-// background-color: #386641;
-// }
-// input[type="range"]::-moz-range-track {
-// background-color: #9a905d;
-// }
-// /* IE*/
-// input[type="range"]::-ms-fill-lower {
-// background-color: #386641;
-// }
-// input[type="range"]::-ms-fill-upper {
-// background-color: #9a905d;
-// }
+#user_prefered_day {
+  border: 3px solid #386641;
+  border-radius: 60px;
+}
 
 #user_temperature,
 #user_sun_exposure {
-  background: #386641;
-  border: solid 1px #386641;
+  background: #6A994E;
+  border: solid 1px #6A994E;
   border-radius: 8px;
-  height: 8px;
+  height: 5px;
   width: 100%;
   outline: none;
   transition: background 450ms ease-in;

@@ -1,5 +1,4 @@
 import { Controller } from "stimulus"
-// import Slider from "bootstrap-slider"
 
 export default class extends Controller {
   static targets = [ "tempSlider", "tempLabel", "sunSlider", "sunLabel" ]
@@ -22,6 +21,6 @@ export default class extends Controller {
 
   sunSliderMethod() {
     console.log(this.sunSliderTarget.value)
-    this.sunLabelTarget.innerHTML = `SunLight <span class='range-value'>${this.sunSliderTarget.value}</span>`
+    this.sunLabelTarget.innerHTML = `Sunlight <span class='range-value'>${this.sunSliderTarget.value}</span>`
   }
 }
