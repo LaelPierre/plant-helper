@@ -11,7 +11,7 @@
         <div class="extended-card-form">
           <p class="card-text"><%= plant.name %></p>
           <p><%= plant.description %></p>
-          <%= simple_form_for @user_plant do |f| %>
+          <%= simple_form_for @user_plant, namespace: "#{plant.id}" do |f| %>
             <%= f.input :nickname, input_html: { value: plant.name } %>
             <%= f.input :plant_age,  collection: UserPlant.plant_ages.keys, as: :radio_buttons %>
             <%= f.input :plant_health, collection: UserPlant.plant_healths.keys, as: :radio_buttons %>
