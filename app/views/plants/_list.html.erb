@@ -17,7 +17,7 @@
             <%= f.input :plant_health, collection: UserPlant.plant_healths.keys, as: :radio_buttons %>
             <%= hidden_field_tag 'plant_id', plant.id %>
           <% end %>
-          <button type="button" class="btn btn-outline-primary card-close-button" data-action='click->extended-card#hideCard'>Close</button>
+          <button type="button" class="btn btn-secondary standard-button card-close-button" data-action='click->extended-card#hideCard'>Close</button>
         </div>
         <br>
       </div>
