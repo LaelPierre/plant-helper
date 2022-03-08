@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :plants, only: [:index, :show]
   resources :user_plants, only: [:create, :show, :edit, :update, :destroy]
-  resources :user_tasks, only: [:new, :show, :create]
+  resources :user_tasks, only: [:new, :show, :create, :update]
 
   get 'my_plants', to: 'user_plants#index'
   get 'dashboard', to: 'user_tasks#index'
