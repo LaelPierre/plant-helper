@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     redirect_to loader_path
   end
 
+  def create_water_user_task
+
+  end
+
   private
 
   def user_params
