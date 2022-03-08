@@ -18,4 +18,9 @@ export default class extends Controller {
       // console.log(data);
     })
   }
+
+  submitCreateUserPlantForm() {
+    const targetedForm = this.element.querySelector(".plant-info-popup.d-flex form")
+    if(targetedForm) targetedForm.submit();
+  }
 }
