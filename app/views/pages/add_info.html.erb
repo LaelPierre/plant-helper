@@ -14,22 +14,25 @@
  <div data-controller="slider">
   <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
     <div class="container info-sliders">
+        <%= image_tag "thermostat (3).png", class: "add-info-images"%>
       <div class="temp-slider">
         <%= f.input :temperature, as: :range,
                 input_html:{
-                   data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
-                   min:"15", max:"30", value:"23", class: "temperature-slider"},
+                  data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
+                   min:"17", max:"25", value:"21", classs: "temperature-slider"},
                 label_html: {data: { slider_target: "tempLabel"}}%>
       </div>
+      <%= image_tag "light-bulb.png", class: "add-info-images"%>
       <div class="sun-slider">
         <%= f.input :sun_exposure, as: :range,
                 input_html:{
-                   data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
+                  data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
                    min:"0", max:"10"},
                 label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
       </div>
+      <%= image_tag "calendar (1).png", class: "add-info-images"%>
       <div class="day-slider">
-        <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ] %>
+        <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
       </div>
     </div>
     <a class="next-button">
@@ -37,17 +40,3 @@
     </a>
   <% end %>
 </div>
-
-
-<%#
-<script>
-// function updateTextInput(val) {
-//           document.getElementById('user_temperature').value=val;
-//         }
-// </script>
-// <script>
-// function updateTextInput(val) {
-//           document.getElementById('textInput2').value=val;
-//         }
-
-</script> %>
