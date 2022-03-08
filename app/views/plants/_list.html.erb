@@ -1,12 +1,12 @@
 <div class="row" style="position:relative">
   <% @plants.each do |plant| %>
     <div class="col-4" data-controller='extended-card'>
-      <div data-action='click->extended-card#revealCard'>
+      <div class="tester" data-action='click->extended-card#revealCard'>
         <li style ="background-image: url(<%= cl_image_path plant.photos.first.key %>)" data-extended-card-target='card'>
           <p class="card-text"><%= plant.name %></p>
         </li>
       </div>
-      <div class="d-none" data-extended-card-target='extendCard' >
+      <div class="d-none" data-extended-card-target='extendCard'>
         <%= cl_image_tag plant.photos.first.key %>
         <div class="extended-card-form">
           <p class="card-text"><%= plant.name %></p>
@@ -17,7 +17,7 @@
             <%= f.input :plant_health, collection: UserPlant.plant_healths.keys, as: :radio_buttons %>
             <%= hidden_field_tag 'plant_id', plant.id %>
           <% end %>
-          <button type="button" class="btn btn-outline-primary" data-action='click->extended-card#hideCard'>Close</button>
+          <button type="button" class="btn btn-outline-primary card-close-button" data-action='click->extended-card#hideCard'>Close</button>
         </div>
         <br>
       </div>

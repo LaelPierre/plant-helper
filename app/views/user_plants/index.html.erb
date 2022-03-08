@@ -127,7 +127,7 @@
       <div class="modal-header">
         <button type="button" class="btn-close button-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" id="modal-body">
         <div class="search-form-container">
           <form novalidate="novalidate" data-plant-card-target="form" class="simple_form search search-input-container" action="<%= plants_path %>" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group search-input-container">
@@ -147,3 +147,21 @@
     </div>
   </div>
 </div>
+<script>
+  const modalBody = document.getElementById("modal-body")
+  console.dir(modalBody)
+  const cards = Array.from(document.getElementsByClassName("tester"))
+  console.log(cards);
+  cards.forEach(element => {
+    element.addEventListener("click", ()=> {
+      modalBody.style.overflowY="hidden"
+      modalBody.scrollTop=0
+    })
+  });
+  const closeButtons = Array.from(document.getElementsByClassName("card-close-button"))
+  closeButtons.forEach(element => {
+    element.addEventListener("click", ()=> {
+      modalBody.style.overflowY="auto"
+    })
+  });
+</script>
