@@ -4,5 +4,5 @@ meta_description: "A beaufitul home doesn't have to be a struggle to maintain.
 With Plant Helper, there is never the need to worry about your plants health.
 Our website is made to cater to every environemnt.
 Fill in your homes details to see your plants strive better than ever before."
-meta_image: "facebook-image.png" # should exist in `app/assets/images/`
+meta_image: "facebook-img.png" # should exist in `app/assets/images/`
 twitter_account: "@plant_helper"   # required for Twitter Cards
