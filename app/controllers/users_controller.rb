@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user_plants.each do |user_plant|
       @user_plant = user_plant
       create_water_user_task
-      @user_task.save
+      create_fertilizer_user_task
     end
     current_user.update(onboarded: true)
     redirect_to loader_path
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
     @user_task.name = @user_plant.nickname
     @user_task.description = @user_task.task.description
+    @user_task.save
   end
 
   def define_humidity(user_plant)
@@ -44,6 +45,7 @@ class UsersController < ApplicationController
     @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
     @user_task.name = @user_plant.nickname
     @user_task.description = @user_task.task.description
+    @user_task.save
   end
 
   private
