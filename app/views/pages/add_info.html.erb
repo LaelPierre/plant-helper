@@ -9,7 +9,7 @@
   </div>
 </div>
 <div class="add-info-text">
- <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the infomation below on your plants homes.</p></div>
+ <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the information below on your plants homes.</p></div>
 </div>
  <div data-controller="slider">
   <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
@@ -32,7 +32,7 @@
       </div>
       <%= image_tag "calendar (1).png", class: "add-info-images"%>
       <div class="day-slider">
-        <%= f.input :prefered_day, collection: [ "Monday", "Tueday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
+        <%= f.input :prefered_day, label: "Preferred",collection: [ "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
       </div>
     </div>
     <a class="next-button">
