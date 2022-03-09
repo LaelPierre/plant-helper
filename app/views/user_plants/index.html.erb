@@ -2,12 +2,15 @@
 <div class="container h1-container">
   <h1>Your plants</h1>
 </div>
+
+<% if current_user.onboarded == false %>
 <div class="step-trackers">
   <div class="circular-step-tracker this-step">
   </div>
   <div class="circular-step-tracker">
   </div>
 </div>
+<% end %>
 <% if current_user.user_plants.empty? %>
   <div class="no-plants">
     <p>Oh it seems that you don't have any plants for now...<br><br>Let's add one below!</p>
