@@ -28,7 +28,11 @@ class UserPlantsController < ApplicationController
     @user_task.task = Task.first
     @user_task.user_plant = @user_plant
     @user_task.frequency = (define_humidity(@user_plant) * (1 + @temp[current_user.temperature] + @sun[current_user.sun_exposure])).round
-    @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
+    if Date::DAYNAMES[Date.today.wday] == current_user.prefered_day
+      @user_task.start_date = Date.today
+    else
+      @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
+    end
     @user_task.name = @user_plant.nickname
     @user_task.description = @user_task.task.description
     @user_task.save
@@ -52,7 +56,11 @@ class UserPlantsController < ApplicationController
     @user_task.task = Task.last
     @user_task.user_plant = @user_plant
     @user_task.frequency = 1
-    @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
+    if Date::DAYNAMES[Date.today.wday] == current_user.prefered_day
+      @user_task.start_date = Date.today
+    else
+      @user_task.start_date = Date.today.next_occurring(current_user.prefered_day.downcase.to_sym)
+    end
     @user_task.name = @user_plant.nickname
     @user_task.description = @user_task.task.description
     @user_task.save
