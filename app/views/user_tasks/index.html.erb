@@ -31,9 +31,14 @@
     </ul>
   </div>
   <div class="col-4 container">
-    <p class="calendar">This is where the calendar will go</p>
-    <%= month_calendar do |date| %>
+    <%= month_calendar(attribute: :start_date, events: @user_tasks) do |date, user_tasks| %>
       <%= date.day %>
+
+      <% user_tasks.each do | user_task | %>
+        <div class="user_task">
+          <%= user_task.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

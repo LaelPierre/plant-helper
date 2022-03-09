@@ -1,0 +1,25 @@
+.simple-calendar {
+  table {
+    min-height: 40vh;
+  }
+  .today {
+    background-color: #F2E8CF;
+  }
+}
+
+.user_task {
+  color: #386641;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+.user_task:hover {
+  background: #386641;
+  color: white;
+}
+
+.calendar-heading {
+  display: flex;
+}
