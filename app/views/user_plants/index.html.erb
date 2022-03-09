@@ -141,16 +141,14 @@
 
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary standard-button" data-action='click->plant-card#submitCreateUserPlantForm'>Add my plant</button>
+        <button type="submit" id="add-plant-button" class="btn btn-primary standard-button" data-action='click->plant-card#submitCreateUserPlantForm'>Add my plant</button>
       </div>
     </div>
   </div>
 </div>
 <script>
   const modalBody = document.getElementById("modal-body")
-  console.dir(modalBody)
   const cards = Array.from(document.getElementsByClassName("tester"))
-  console.log(cards);
   cards.forEach(element => {
     element.addEventListener("click", ()=> {
       modalBody.style.overflowY="hidden"
@@ -163,4 +161,20 @@
       modalBody.style.overflowY="auto"
     })
   });
+  const addPlantButton = document.getElementById("add-plant-button")
+
+  const age = document.getElementsByClassName('user_plant_plant_age')
+  const ageArray = Array.from(age)
+  ageArray.forEach(plantForm => {
+    plantForm.children[2].children[0].checked = true
+})
+  const health = Array.from(document.getElementsByClassName("user_plant_plant_health"))
+  const healthArray = Array.from(health)
+  healthArray.forEach(plantForm => {
+    plantForm.children[2].children[0].checked = true
+})
+
+  console.log(ageInput);
+  // console.log(health);
+
 </script>
