@@ -11,6 +11,24 @@
         <div class="extended-card-form">
           <p class="card-text"><%= plant.name %></p>
           <p><%= plant.description %></p>
+
+          <div class="d-flex justify-content-around state-plant">
+            <div class="state">
+              <img src="https://res.cloudinary.com/dcgubphgl/image/upload/v1646762407/plant%20sample/sun_skgxgi.png" alt="light">
+              <p><%= plant.light %></p>
+            </div>
+
+            <div class="state">
+              <img src="https://res.cloudinary.com/dcgubphgl/image/upload/v1646762407/plant%20sample/water_o4tb7s.png" alt="humidity">
+              <p><%= plant.humidity %></p>
+            </div>
+
+            <div class="state">
+              <img src="https://res.cloudinary.com/dcgubphgl/image/upload/v1646762407/plant%20sample/high-temperature_q7ylfs.png" alt="temperature">
+              <p><%= plant.temperature %></p>
+            </div>
+          </div>
+
           <%= simple_form_for @user_plant, namespace: "#{plant.id}" do |f| %>
             <%= f.input :nickname, input_html: { value: plant.name } %>
             <%= f.input :plant_age,  collection: UserPlant.plant_ages.keys, as: :radio_buttons %>
