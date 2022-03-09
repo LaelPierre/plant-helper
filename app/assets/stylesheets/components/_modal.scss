@@ -48,6 +48,7 @@ input[type=text]::placeholder {
   justify-content: space-between;
 }
 
+
 .plant-info-popup {
   height: 100%;
   width: 100%;
@@ -155,4 +156,23 @@ input[type=text]::placeholder {
       }
     }
   }
+}
+
+.state {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: auto;
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
+
+.state-plant {
+  margin-bottom: 15px;
 }
