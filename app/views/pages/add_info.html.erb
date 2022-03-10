@@ -8,35 +8,41 @@
   <div class="circular-step-tracker this-step">
   </div>
 </div>
-<div class="add-info-text">
- <div><p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the information below on your plants homes.</p></div>
-</div>
- <div data-controller="slider">
-  <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
-    <div class="container info-sliders">
-        <%= image_tag "thermostat (3).png", class: "add-info-images"%>
-      <div class="temp-slider">
-        <%= f.input :temperature, as: :range,
-                input_html:{
-                  data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
-                   min:"17", max:"25", value:"21", class: "temperature-slider"},
-                label_html: {data: { slider_target: "tempLabel"}}%>
-      </div>
-      <%= image_tag "sun (2).png", class: "add-info-images"%>
-      <div class="sun-slider">
-        <%= f.input :sun_exposure, as: :range,
-                input_html:{
-                  data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
-                   min:"0", max:"10"},
-                label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
-      </div>
-      <%= image_tag "calendar (1).png", class: "add-info-images"%>
-      <div class="day-slider">
-        <%= f.input :prefered_day, label: "Preferred",collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
-      </div>
+<div class="row">
+  <div class="col-6">
+    <div class="add-info-text mb-5">
+      <p>Once again, leave the details to <strong>us</strong>. Please provide us with an estimate of the information below on your plants homes.</p>
     </div>
-    <div class="next-button">
-      <%= f.submit :Finish, class: "btn btn-primary standard-button" %>
+  </div>
+  <div class="col-6">
+    <div class="mb-5" data-controller="slider">
+      <%= simple_form_for current_user, url: add_info_path, method: :patch do |f| %>
+        <div class="container info-sliders">
+          <div class="temp-slider">
+            <%= image_tag "thermostat (3).png", class: "add-info-images"%>
+            <%= f.input :temperature, as: :range,
+                    input_html:{
+                      data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
+                      min:"17", max:"25", value:"21", class: "temperature-slider"},
+                    label_html: {data: { slider_target: "tempLabel"}}%>
+          </div>
+          <div class="sun-slider">
+          <%= image_tag "sun (2).png", class: "add-info-images"%>
+            <%= f.input :sun_exposure, as: :range,
+                    input_html:{
+                      data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
+                      min:"0", max:"10"},
+                    label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
+          </div>
+          <div class="day-slider">
+          <%= image_tag "calendar (1).png", class: "add-info-images"%>
+            <%= f.input :prefered_day, label: "Preferred",collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
+          </div>
+        </div>
     </div>
+  </div>
+  <div class="next-button">
+    <%= f.submit :Finish, class: "btn btn-primary standard-button" %>
+  </div>
   <% end %>
 </div>

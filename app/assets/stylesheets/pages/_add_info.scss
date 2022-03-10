@@ -37,11 +37,11 @@
 }
 
 .add-info-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  margin: 10px 300px 40px 300px;
+    padding: 20px 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
 }
 
 .info-sliders {
@@ -53,24 +53,26 @@
 }
 
 .add-info-images{
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-top: 40px;
+  margin-right: 32px;
 }
 
-.temp-slider {
-  width: 400px;
-  margin-top: 40px;
-}
-
-.sun-slider {
-  width: 400px;
-  margin-top: 40px;
-}
+.temp-slider,
+.sun-slider,
 .day-slider {
-  width: 250px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.user_prefered_day,
+.user_temperature,
+.user_sun_exposure {
+  flex-grow: 1;
 }
 
 #user_prefered_day {

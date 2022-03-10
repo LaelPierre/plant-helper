@@ -6,6 +6,9 @@
   height: 100px;
   padding: 0px 12px;
   color: #386641;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
 }
 .footer-links {
   display: flex;
@@ -20,4 +23,12 @@
 
 .footer-brand img {
   width: 160px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px 124px;
 }
