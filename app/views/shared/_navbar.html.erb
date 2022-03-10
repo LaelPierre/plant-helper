@@ -20,7 +20,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Dashboard", "/dashboard", class: "dropdown-item" %>
               <%= link_to "My plants", "/my_plants", class: "dropdown-item" %>
-              <%= link_to "My profile", "#", class: "dropdown-item" %>
+              <%= link_to "My profile", "/users/edit", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

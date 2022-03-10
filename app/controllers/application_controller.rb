@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    # devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:temperature, :sun_exposure, :prefered_day])
   end
 
   def default_url_options

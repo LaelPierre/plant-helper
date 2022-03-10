@@ -1,35 +1,64 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <h2 class="title-edit">Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <div class="form-inputs" data-controller="slider">
+      <div class="edit-form-center">
+        <%= f.input :email, required: true, autofocus: true %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+
+      <div class="info-sliders">
+          <%= image_tag "thermostat (3).png", class: "add-info-images"%>
+        <div class="temp-slider">
+          <%= f.input :temperature, as: :range,
+                  input_html:{
+                    data: { slider_target: "tempSlider", action: "input->slider#tempSliderMethod" },
+                    min:"17", max:"25", value:"21", class: "temperature-slider"},
+                  label_html: {data: { slider_target: "tempLabel"}}%>
+        </div>
+        <%= image_tag "sun (2).png", class: "add-info-images"%>
+        <div class="sun-slider">
+          <%= f.input :sun_exposure, as: :range,
+                  input_html:{
+                    data: { slider_target: "sunSlider", action: "input->slider#sunSliderMethod" },
+                    min:"0", max:"10"},
+                  label_html: {data: { slider_target: "sunLabel"}, class: "sunshine-slider"}%>
+        </div>
+        <%= image_tag "calendar (1).png", class: "add-info-images"%>
+        <div class="day-slider">
+          <%= f.input :prefered_day, label: "Preferred",collection: [ "Monday", "Tuesday", "Wednesday", "Thurday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions title-edit">
+      <%= f.button :submit, "Update", class: "btn-edit" %>
+    </div>
+  <% end %>
+
+  <div class="title-edit">
+    <h3>Cancel my account</h3>
+
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+    <%= link_to "Back", :back, class: "btn btn-edit" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
