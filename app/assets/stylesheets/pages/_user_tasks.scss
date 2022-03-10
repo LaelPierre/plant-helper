@@ -10,6 +10,8 @@
   padding: 0;
   border-top-right-radius: 31px;
   padding-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .task-h2 {
@@ -67,9 +69,4 @@ ul.tasks-list {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.calendar {
-  position: sticky;
-  top: 0;
 }

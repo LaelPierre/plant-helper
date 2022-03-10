@@ -1,4 +1,8 @@
 .simple-calendar {
+  position: sticky;
+  top: 80px;
+  margin-top: 30px;
+
   table {
     min-height: 40vh;
   }
@@ -22,4 +26,11 @@
 
 .calendar-heading {
   display: flex;
+  margin: 0 !important;
+}
+
+.calendar-day-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 0px;
 }
