@@ -137,7 +137,7 @@
         <button type="button" class="btn-close button-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modal-body">
-        <div class="search-form-container">
+        <div id="modal-search" class="search-form-container">
           <form novalidate="novalidate" data-plant-card-target="form" class="simple_form search search-input-container" action="<%= plants_path %>" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group search-input-container">
               <input class="form-control string required search-input" type="text" name="search[query]" id="search_query" data-action="keyup->plant-card#search" data-plant-card-target="searchBar" placeholder="Find your plant..." />
@@ -157,17 +157,20 @@
 </div>
 <script>
   const modalBody = document.getElementById("modal-body")
+  const modalSearch = document.getElementById("modal-search")
   const cards = Array.from(document.getElementsByClassName("tester"))
   cards.forEach(element => {
     element.addEventListener("click", ()=> {
       modalBody.style.overflowY="hidden"
       modalBody.scrollTop=0
+      modalSearch.style.display="none"
     })
   });
   const closeButtons = Array.from(document.getElementsByClassName("card-close-button"))
   closeButtons.forEach(element => {
     element.addEventListener("click", ()=> {
       modalBody.style.overflowY="auto"
+      modalSearch.style.display="block"
     })
   });
   const addPlantButton = document.getElementById("add-plant-button")
@@ -182,8 +185,4 @@
   healthArray.forEach(plantForm => {
     plantForm.children[2].children[0].checked = true
 })
-
-  console.log(ageInput);
-  // console.log(health);
-
 </script>
