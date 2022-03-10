@@ -37,11 +37,11 @@
           </div>
           <div class="day-slider">
           <%= image_tag "calendar (1).png", class: "add-info-images"%>
-            <%= f.input :prefered_day, label: "Preferred care day",collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info"%>
+            <%= f.input :prefered_day, label: "Preferred care day", collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ], class: "dropdown-add-info" %>
           </div>
         </div>
         <div class="next-button">
-          <%= f.submit :Finish, class: "btn btn-primary standard-button" %>
+          <%= f.submit :Finish, class: "btn btn-primary standard-button", id: "finish-btn" %>
         </div>
       <% end %>
     </div>
