@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="title-edit">Edit <%= resource_name.to_s.humanize %></h2>
+  <h2 class="title-edit"><%= resource_name.to_s.humanize %> profile</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -49,16 +49,11 @@
       </div>
     </div>
 
-    <div class="form-actions title-edit">
-      <%= f.button :submit, "Update", class: "btn-edit" %>
+    <div class="flex-button-profile">
+      <%= f.button :submit, "Update", class: "btn btn-primary standard-button" %>
+      <h3>Cancel my account</h3>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <%= link_to "Back", :back, class: "btn btn-primary standard-button back-button-profile" %>
     </div>
   <% end %>
-
-  <div class="title-edit">
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "Back", :back, class: "btn btn-edit" %>
-  </div>
 </div>

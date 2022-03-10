@@ -1,7 +1,15 @@
+.flex-button-profile {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+}
+
 .title-edit {
-  text-align: center;
-  padding-top: 30px;
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-edit {
@@ -22,4 +30,12 @@
 .edit-form-center {
   width: 48%;
   margin: 0 auto;
+}
+
+.back-button-profile {
+  margin-bottom: 30px;
+}
+
+.title-edit {
+  margin: 0;
 }
