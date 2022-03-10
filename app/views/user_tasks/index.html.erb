@@ -7,61 +7,64 @@
     <div class="today-tasks">
       <h2 class="task-h2">Your next tasks</h2>
       <ul class="container tasks-list">
-        <% @user_tasks.each do |user_task| %>
-          <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-            <% if user_task.start_date == Date.today %>
-              <li>
-                <div class="card task-card">
-                  <div class="w-25 img-container">
-                    <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
-                  </div>
-                  <div class="w-75 task-details-container">
-                    <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
-                    <div class="w-70 card-body">
-                      <p class="card-text"><%= user_task.task.description %></p>
-                      <% if user_task.frequency > 1 %>
-                        <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
-                      <% else %>
-                        <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
-                      <% end %>
+        <% if @today_user_tasks.empty? %>
+          <h3>Great job all the tasks are done!</h3>
+        <% else %>
+          <h3><%= @today_user_tasks.first.start_date %></h3>
+          <% @today_user_tasks.each do |user_task| %>
+            <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
+
+                <li>
+                  <div class="card task-card">
+                    <div class="w-25 img-container">
+                      <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
                     </div>
-                    <div>
-                      <%= link_to user_task_path(user_task.id), method: :patch do %>
-                        <%= image_tag 'check.png', height: 50, width: 50 %>
-                      <% end %>
+                    <div class="w-75 task-details-container">
+                      <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
+                      <div class="w-70 card-body">
+                        <p class="card-text"><%= user_task.task.description %></p>
+                        <% if user_task.frequency > 1 %>
+                          <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
+                        <% else %>
+                          <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
+                        <% end %>
+                      </div>
+                      <div>
+                        <%= link_to user_task_path(user_task.id), method: :patch do %>
+                          <%= image_tag 'check.png', height: 50, width: 50 %>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            <% end %>
+                </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
     <div class="today-tasks">
-      <h2 class="task-h2">Future Task</h2>
+      <h2 class="task-h2">Future Tasks</h2>
       <ul class="container tasks-list">
-        <% @user_tasks.each do |user_task| %>
+        <% @future_user_tasks.each do |user_task| %>
           <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-            <% if user_task.start_date != Date.today %>
-              <li>
-                <div class="card task-card">
-                  <div class="w-25 img-container">
-                    <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
-                  </div>
-                  <div class="w-75 task-details-container">
-                    <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
-                    <div class="w-70 card-body">
-                      <p class="card-text"><%= user_task.task.description %></p>
-                      <% if user_task.frequency > 1 %>
-                        <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
-                      <% else %>
-                        <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
-                      <% end %>
-                    </div>
+            <h4><%= user_task.start_date %></h4>
+            <li>
+              <div class="card task-card">
+                <div class="w-25 img-container">
+                  <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
+                </div>
+                <div class="w-75 task-details-container">
+                  <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
+                  <div class="w-70 card-body">
+                    <p class="card-text"><%= user_task.task.description %></p>
+                    <% if user_task.frequency > 1 %>
+                      <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
+                    <% else %>
+                      <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
+                    <% end %>
                   </div>
                 </div>
-              </li>
-            <% end %>
+              </div>
+            </li>
         <% end %>
       </ul>
     </div>
