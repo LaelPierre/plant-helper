@@ -21,7 +21,7 @@ User.create!(email: "thomas.test@test.com", password: "123456")
 # First Part
 def plant_url
   counter = 1
-  100.times do
+  20.times do
     counter += 1
     begin
       puts url = "https://myplantin.com/plant/#{counter}"
