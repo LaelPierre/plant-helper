@@ -12,8 +12,6 @@ export default class extends Controller {
     this.extendCardTarget.classList.remove("d-none")
     this.extendCardTarget.classList.add("d-flex")
     this.extendCardTarget.classList.add("plant-info-popup")
-    // const modalBody = document.getElementsByClassName("modal-body")
-    // modalBody.style.overflow="hidden"
 
   }
 

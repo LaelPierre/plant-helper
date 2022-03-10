@@ -8,39 +8,78 @@
     <ul class="container tasks-list">
       <% @user_tasks.each do |user_task| %>
         <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
-        <li>
-          <div class="card task-card">
-            <div class="w-25 img-container">
-              <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
-            </div>
-            <div class="w-75 task-details-container">
-              <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
-              <div class="w-70 card-body">
-                <p class="card-text"><%= user_task.task.description %></p>
-                <p class="card-text"><small class="text-muted"><%= user_task.frequency %> times a week</small></p>
+          <% if user_task.start_date == Date.today %>
+            <li>
+              <div class="card task-card">
+                <div class="w-25 img-container">
+                  <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
+                </div>
+                <div class="w-75 task-details-container">
+                  <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
+                  <div class="w-70 card-body">
+                    <p class="card-text"><%= user_task.task.description %></p>
+                    <% if user_task.frequency > 1 %>
+                      <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
+                    <% else %>
+                      <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
+                    <% end %>
+                  </div>
+                  <div>
+                    <%= link_to user_task_path(user_task.id), method: :patch do %>
+                      <%= image_tag 'check.png', height: 50, width: 50 %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
-              <div>
-                <%= link_to user_task_path(user_task.id), method: :patch do %>
-                  <%= image_tag 'check.png', height: 50, width: 50 %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </li>
+            </li>
+          <% end %>
       <% end %>
     </ul>
   </div>
   <div class="col-4 container">
-    <p class="calendar">This is where the calendar will go</p>
-    <%= month_calendar do |date| %>
+    <%= month_calendar(attribute: :start_date, events: @user_tasks) do |date, user_tasks| %>
       <%= date.day %>
+
+      <% user_tasks.each do | user_task | %>
+        <div class="user_task">
+          <%= user_task.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
-<div class="container">
-  <br>
-  <br>
-  <h2>Next tasks</h2>
-  <br>
-  <br>
+<br>
+<div class="container global">
+  <div class="col-8 container today-tasks">
+    <h2 class="task-h2">Future Task</h2>
+    <ul class="container tasks-list">
+      <% @user_tasks.each do |user_task| %>
+        <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
+          <% if user_task.start_date != Date.today %>
+            <li>
+              <div class="card task-card">
+                <div class="w-25 img-container">
+                  <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, height: 200, width: 200, class: "img-task" %>
+                </div>
+                <div class="w-75 task-details-container">
+                  <h2 class="w-30 card-title"><%= @current_user_plant.first.nickname %></h2>
+                  <div class="w-70 card-body">
+                    <p class="card-text"><%= user_task.task.description %></p>
+                    <% if user_task.frequency > 1 %>
+                      <p class="card-text"><small class="text-muted">every <%= user_task.frequency %> day(s)</small></p>
+                    <% else %>
+                      <p class="card-text"><small class="text-muted"><%= user_task.frequency %> time per month</small></p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-4 container">
+
+  </div>
 </div>
+<br>
