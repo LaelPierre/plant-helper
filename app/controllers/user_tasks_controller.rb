@@ -1,6 +1,8 @@
 class UserTasksController < ApplicationController
   def index
     @user_tasks = current_user.user_tasks.where(done: false)
+    @today_user_tasks = @user_tasks.select { |ut| ut.start_date == Date.today }
+    @future_user_tasks = @user_tasks - @today_user_tasks
   end
 
   def new
