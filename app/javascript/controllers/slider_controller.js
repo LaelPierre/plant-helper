@@ -15,12 +15,10 @@ export default class extends Controller {
   }
 
   tempSliderMethod() {
-    console.log(this.tempSliderTarget.value)
     this.tempLabelTarget.innerHTML = `Temperature <span class='range-value'>${this.tempSliderTarget.value}</span>`
   }
 
   sunSliderMethod() {
-    console.log(this.sunSliderTarget.value)
     this.sunLabelTarget.innerHTML = `Sunlight <span class='range-value'>${this.sunSliderTarget.value}</span>`
   }
 }
