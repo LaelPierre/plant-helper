@@ -1,6 +1,7 @@
 .global {
   display: flex;
   flex-direction: row;
+  gap: 80px;
 }
 
 .today-tasks {

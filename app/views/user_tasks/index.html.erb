@@ -36,14 +36,13 @@
       <% end %>
     </ul>
   </div>
-  <div class="col-4 container">
+  <div class="col-4 container calendar" data-controller="tooltip">
     <%= month_calendar(attribute: :start_date, events: @user_tasks) do |date, user_tasks| %>
       <%= date.day %>
-
+      <br>
       <% user_tasks.each do | user_task | %>
-        <div class="user_task">
-          <%= user_task.name %>
-        </div>
+          <% @current_user_plant = UserPlant.where(id: user_task.user_plant_id) %>
+          <%= cl_image_tag @current_user_plant.first.plant.photos.first.key, class: 'user_task', data: { bs_toggle: 'tooltip', bs_placement: 'top'}, title: "#{user_task.name} - #{user_task.description}" %>
       <% end %>
     <% end %>
   </div>

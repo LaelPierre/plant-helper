@@ -50,3 +50,24 @@
   align-items: center;
   margin-bottom: 40px;
 }
+
+.calendar-button {
+  border: 1px solid #386641;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #386641;
+  border-radius: 50px;
+  position: relative;
+  width: 167px;
+  height: 59px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.calendar-button:hover {
+  background-color: #386641;
+  border: #386641;
+  box-shadow: 1px 1px 62px rgba(56, 102, 65, 0.25);
+  transition: 1s;
+}
