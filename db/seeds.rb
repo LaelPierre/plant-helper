@@ -16,11 +16,12 @@ Task.destroy_all
 
 User.create!(email: "test@test.com", password: "123456")
 User.create!(email: "test1@test.com", password: "123456")
+User.create!(email: "thomas.test@test.com", password: "123456")
 
 # First Part
 def plant_url
   counter = 1
-  20.times do
+  100.times do
     counter += 1
     begin
       puts url = "https://myplantin.com/plant/#{counter}"
