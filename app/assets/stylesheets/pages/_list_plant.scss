@@ -14,6 +14,11 @@
   font-weight: 600;
   font-size: larger;
 }
+.flex-on-info-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .input-styling-on-form {
   background-color: transparent;
@@ -24,4 +29,30 @@
   border-radius: 50px;
   border-color: #386641;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(56, 102, 65, 0.6);
+  width: 500px;
+}
+
+
+.input-form-info-styling {
+  color: #386641;
+  font-weight: 525;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+fieldset {
+  margin-top: 30px;
+}
+
+legend {
+  display: flex;
+  justify-content: center;
+}
+
+.input-form-info-styling {
+  color: #386641;
+  font-weight: 525;
+  display: flex;
+  justify-content: center;
 }
