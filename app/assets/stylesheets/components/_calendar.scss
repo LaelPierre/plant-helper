@@ -8,11 +8,11 @@
 }
 
 .user_task {
-  color: #386641;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: white;
-  transition: background 0.3s ease;
+  border-radius: 50%;
+  border: 1px solid #386641;
+  height: 16px;
+  width: 16px;
+  object-fit: cover;
 }
 
 .user_task:hover {
