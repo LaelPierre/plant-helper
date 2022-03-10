@@ -76,7 +76,7 @@ class UsersController < ApplicationController
     @user_task.save
 
     # Future tasks
-    y = 1
+    y = 0
     10.times do
       @future_fertilizer_task = UserTask.new
       @future_fertilizer_task.task = Task.last
