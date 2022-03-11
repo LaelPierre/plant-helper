@@ -1,7 +1,7 @@
 .global {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 16px;
 }
 
 .today-tasks {
@@ -42,7 +42,7 @@ ul.tasks-list {
   flex-direction: row;
   border-radius: 31px;
   height: 152px;
-  width: 732px;
+  width: 682px;
   box-sizing: border-box;
   border-radius: 31px;
   background-size: cover;
