@@ -4,10 +4,12 @@
   <title>We're sorry, but something went wrong (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-      body{
+
+    body{
       margin:0;
       background-color: white;
       font-family: Permanent Marker;
+      background-color: #386641;
     }
 
     .container{
@@ -18,20 +20,31 @@
     }
 
     .error-404{
-      font-size: xx-large;
-      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      font-size: 150px;
+      font-weight: 700;
+      color: white;
     }
 
     .background-image-404 {
-      background-image: url('images/burning-plant');
+      display: flex;
+      justify-content: center;
+    }
+
+    .left {
+      align-self: flex-end;
     }
 
     .errortext h1{
-        position: absolute;
-        top:63%;
-        left:50%;
-        transform: translateX(-50%);
-        font-size: 2.5vw;
+      position: absolute;
+      top:63%;
+      left:50%;
+      transform: translateX(-50%);
+      font-size: 2.5vw;
+      margin-top: -15px;
+      text-align: center;
+      color: white;
     }
 
     .errortext h2{
@@ -40,10 +53,12 @@
         left:50%;
         transform: translateX(-50%);
         font-size: 2vw;
+        color: white;
     }
 
     a{
-        color: #000000;
+      color: white;
+        opacity: 80%;
     }
 
     @keyframes sl{
@@ -56,12 +71,15 @@
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="container">
+  <div class="container box">
     <h1 class="error-404">404</h1>
-    <div class="background-image-404" style="background-image: url('burning-tree.gif')">
-    </div>
-    <div class="errortext">
-        <h1>Dang!! You've hit a wall!!</h1>
+  </div>
+  <div class="background-image-404">
+    <img src=" https://media1.giphy.com/media/LOKEE7kjyMO0Eag5Uz/giphy.gif?cid=790b76119242b47068693b7f98f38b12e153671a58974f13&rid=giphy.gif&ct=s" alt="Burning Tree">
+    <img class=" left " src="https://media1.giphy.com/media/LOKEE7kjyMO0Eag5Uz/giphy.gif?cid=790b76119242b47068693b7f98f38b12e153671a58974f13&rid=giphy.gif&ct=s" alt="Burning Tree">
+  </div>
+    <div class="errortext box">
+        <h1>Oops, looks like the page your are trying to reach doesn't exist!</h1>
         <h2>Would you like us to show you back <a href="http://www.plant-helper.me/">home</a>?</h2>
     </div>
     </div>
