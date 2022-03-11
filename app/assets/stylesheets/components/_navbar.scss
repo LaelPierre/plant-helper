@@ -2,7 +2,7 @@
 .navbar-plant-helper {
   justify-content: space-between;
   background: white;
-  padding-bottom: 12px;
+  border-bottom: solid 1px #386641;
 }
 .navbar-plant-helper .navbar-collapse {
   flex-grow: 0;
@@ -58,15 +58,4 @@ color: #386641;
   align-items: center;
   width: 100%;
   margin: 0px 66px;
-}
-
-.vine {
-  height: 20px;
-  width: 100%;
-  background-image: url("vine.png");
-  display: block;
-  background-size: 112px;
-  background-repeat: repeat-x;
-  background-color: transparent;
-  margin-top: 50px;
 }
